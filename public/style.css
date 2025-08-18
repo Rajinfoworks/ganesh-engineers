@@ -16,19 +16,6 @@
   --transition-speed: 0.3s;
 }
 
-/* ==== Dark Mode Variables ==== */
-body.dark-mode {
-  --bg-light: #121212;
-  --bg-section: #1E1E1E;
-  --bg-alt: #272727;
-  --primary: #E07A5F;
-  --secondary: #FFFFFF;
-  --text: #E0E0E0;
-  --text-light: #BBBBBB;
-  --shadow-light: rgba(255,255,255,0.05);
-  --shadow-medium: rgba(255,255,255,0.1);
-}
-
 /* ==== Global Styles ==== */
 *,
 *::before,

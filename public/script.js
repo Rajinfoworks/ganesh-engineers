@@ -30,20 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ==============================
-     🌙 Dark Mode Toggle
-  ============================== */
-  const darkToggle = document.getElementById("dark-mode-toggle");
-  if (darkToggle) {
-    if (localStorage.getItem("dark-mode") === "enabled") {
-      document.body.classList.add("dark-mode");
-    }
-    darkToggle.addEventListener("click", () => {
-      const isDark = document.body.classList.toggle("dark-mode");
-      localStorage.setItem("dark-mode", isDark ? "enabled" : "");
-    });
-  }
-
-  /* ==============================
      📩 Contact Form Submission
   ============================== */
   const contactForm = document.getElementById("contact-form");
