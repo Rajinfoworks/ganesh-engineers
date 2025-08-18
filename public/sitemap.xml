@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://www.ganesh-engineers.com/</loc>
+    <lastmod>2025-08-18</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.ganesh-engineers.com/about</loc>
+    <lastmod>2025-08-18</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.ganesh-engineers.com/services</loc>
+    <lastmod>2025-08-18</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Projects Page -->
+  <url>
+    <loc>https://www.ganesh-engineers.com/projects</loc>
+    <lastmod>2025-08-18</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Clients Page -->
+  <url>
+    <loc>https://www.ganesh-engineers.com/clients</loc>
+    <lastmod>2025-08-18</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Testimonials Page -->
+  <url>
+    <loc>https://www.ganesh-engineers.com/testimonials</loc>
+    <lastmod>2025-08-18</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.ganesh-engineers.com/contact</loc>
+    <lastmod>2025-08-18</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+</urlset>
+
