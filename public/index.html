@@ -43,31 +43,35 @@
 
 <body>
   <!-- ===== HEADER / NAVBAR ===== -->
-  <header class="header">
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Ganesh Engineers Home">
-        <span class="brand-text"><strong>Ganesh Engineers</strong></span>
-      </a>
+<header class="header">
+  <div class="container nav">
+    <!-- Brand / Logo -->
+    <a class="brand" href="#home" aria-label="Ganesh Engineers Home">
+      <span class="brand-text"><strong>Ganesh <span class="brand-custom">Engineers</span></strong></span>
+    </a>
 
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#clients">Clients</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Navigation Links -->
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#clients">Clients</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
+<main>
+
     <!-- Hero Section -->
     <section id="home" class="hero-section" aria-label="Hero section introducing Ganesh Engineers">
       <div class="hero-content container">
@@ -121,48 +125,61 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="animate-section">
-      <h2 class="section-title">Our Services</h2>
-      <div class="service-grid">
+<section id="services" class="animate-section">
+  <h2 class="section-title">Our Services</h2>
+  <div class="service-grid">
 
-        <div class="service-card">
-          <img src="images/powder-coating.webp" alt="Powder Coating" loading="lazy">
-          <h3>Powder Coating</h3>
-          <p>Eco-friendly protective finishes with a broad color range and long-lasting durability.</p>
-        </div>
+    <div class="service-card">
+      <img src="images/powder-coating.webp" alt="Powder Coating" loading="lazy"
+           data-title="Powder Coating"
+           data-desc="Eco-friendly protective finishes with a broad color range and long-lasting durability.">
+      <h3>Powder Coating</h3>
+      <p>Eco-friendly protective finishes with a broad color range and long-lasting durability.</p>
+    </div>
 
-        <div class="service-card">
-          <img src="images/Sand-Blasting.webp" alt="Sand Blasting" loading="lazy">
-          <h3>Sand Blasting</h3>
-          <p>Efficient surface prep for optimal adhesion and smooth finish.</p>
-        </div>
+    <div class="service-card">
+      <img src="images/Sand-Blasting.webp" alt="Sand Blasting" loading="lazy"
+           data-title="Sand Blasting"
+           data-desc="Efficient surface prep for optimal adhesion and smooth finish.">
+      <h3>Sand Blasting</h3>
+      <p>Efficient surface prep for optimal adhesion and smooth finish.</p>
+    </div>
 
-        <div class="service-card">
-          <img src="images/epoxy.webp" alt="Epoxy Painting" loading="lazy">
-          <h3>Epoxy Painting</h3>
-          <p>Heavy-duty coatings for extreme corrosion resistance.</p>
-        </div>
+    <div class="service-card">
+      <img src="images/epoxy.webp" alt="Epoxy Painting" loading="lazy"
+           data-title="Epoxy Painting"
+           data-desc="Heavy-duty coatings for extreme corrosion resistance.">
+      <h3>Epoxy Painting</h3>
+      <p>Heavy-duty coatings for extreme corrosion resistance.</p>
+    </div>
 
-        <div class="service-card">
-          <img src="images/zinc.webp" alt="Zinc Spray & Metallizing" loading="lazy">
-          <h3>Zinc Spray & Aluminum/S.S. Metallizing</h3>
-          <p>Long-term protection for steel and iron structures.</p>
-        </div>
+    <div class="service-card">
+      <img src="images/zinc.webp" alt="Zinc Spray & Metallizing" loading="lazy"
+           data-title="Zinc Spray & Aluminum/S.S. Metallizing"
+           data-desc="Long-term protection for steel and iron structures.">
+      <h3>Zinc Spray & Aluminum/S.S. Metallizing</h3>
+      <p>Long-term protection for steel and iron structures.</p>
+    </div>
 
-        <div class="service-card">
-          <img src="images/Sign Boards.webp" alt="Sign Boards" loading="lazy">
-          <h3>Sign Boards</h3>
-          <p>Durable and customizable sign boards for businesses and promotions.</p>
-        </div>
+    <div class="service-card">
+      <img src="images/Sign Boards.webp" alt="Sign Boards" loading="lazy"
+           data-title="Sign Boards"
+           data-desc="Durable and customizable sign boards for businesses and promotions.">
+      <h3>Sign Boards</h3>
+      <p>Durable and customizable sign boards for businesses and promotions.</p>
+    </div>
 
-        <div class="service-card">
-          <img src="images/rubber.webp" alt="Rubber Lining" loading="lazy">
-          <h3>Rubber Lining</h3>
-          <p>Protective linings to minimize wear and maximize lifespan.</p>
-        </div>
+    <div class="service-card">
+      <img src="images/rubber.webp" alt="Rubber Lining" loading="lazy"
+           data-title="Rubber Lining"
+           data-desc="Protective linings to minimize wear and maximize lifespan.">
+      <h3>Rubber Lining</h3>
+      <p>Protective linings to minimize wear and maximize lifespan.</p>
+    </div>
 
-      </div>
-    </section>
+  </div>
+</section>
+
 
     <!-- Image Popup Modal -->
     <div id="imgModal" class="modal" aria-hidden="true">
@@ -171,49 +188,62 @@
       <div id="caption"></div>
     </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="animate-section">
-      <h2 class="section-title">Our Projects</h2>
-      <div class="project-grid">
+   <!-- Projects Section -->
+<section id="projects" class="animate-section">
+  <h2 class="section-title">Our Projects</h2>
+  <div class="project-grid">
 
-        <div class="project-card">
-          <img src="images/chimney_project.webp" alt="200 MTS Chimney Tower" loading="lazy">
-          <h3>200 MTS Chimney Tower</h3>
-          <p>Precision-engineered tower handling extreme wind loads and chemical exposure.</p>
-        </div>
+    <div class="project-card">
+      <img src="images/chimney_project.webp" alt="200 MTS Chimney Tower" loading="lazy"
+           data-title="200 MTS Chimney Tower"
+           data-desc="Precision-engineered tower handling extreme wind loads and chemical exposure.">
+      <h3>200 MTS Chimney Tower</h3>
+      <p>Precision-engineered tower handling extreme wind loads and chemical exposure.</p>
+    </div>
 
-        <div class="project-card">
-          <img src="images/dairy_plant.webp" alt="Dairy Plant Galvanizing" loading="lazy">
-          <h3>Dairy Plant Galvanizing</h3>
-          <p>Hot-dip galvanizing ensuring long-term resistance in hygiene-sensitive environments.</p>
-        </div>
+    <div class="project-card">
+      <img src="images/dairy_plant.webp" alt="Dairy Plant Galvanizing" loading="lazy"
+           data-title="Dairy Plant Galvanizing"
+           data-desc="Hot-dip galvanizing ensuring long-term resistance in hygiene-sensitive environments.">
+      <h3>Dairy Plant Galvanizing</h3>
+      <p>Hot-dip galvanizing ensuring long-term resistance in hygiene-sensitive environments.</p>
+    </div>
 
-        <div class="project-card">
-          <img src="images/oil_tanks.webp" alt="ONGC Oil Tanks" loading="lazy">
-          <h3>ONGC Oil Tanks</h3>
-          <p>Durable storage tanks built to withstand marine atmospheres for 15+ years.</p>
-        </div>
+    <div class="project-card">
+      <img src="images/oil_tanks.webp" alt="ONGC Oil Tanks" loading="lazy"
+           data-title="ONGC Oil Tanks"
+           data-desc="Durable storage tanks built to withstand marine atmospheres for 15+ years.">
+      <h3>ONGC Oil Tanks</h3>
+      <p>Durable storage tanks built to withstand marine atmospheres for 15+ years.</p>
+    </div>
 
-        <div class="project-card">
-          <img src="images/petrochemical_equipment.webp" alt="Petrochemical Equipment" loading="lazy">
-          <h3>Petrochemical Equipment</h3>
-          <p>Extreme chemical resistance applied in confined industrial areas.</p>
-        </div>
+    <div class="project-card">
+      <img src="images/petrochemical_equipment.webp" alt="Petrochemical Equipment" loading="lazy"
+           data-title="Petrochemical Equipment"
+           data-desc="Extreme chemical resistance applied in confined industrial areas.">
+      <h3>Petrochemical Equipment</h3>
+      <p>Extreme chemical resistance applied in confined industrial areas.</p>
+    </div>
 
-        <div class="project-card">
-          <img src="images/steel_bridges.webp" alt="Steel Bridges" loading="lazy">
-          <h3>Steel Bridges</h3>
-          <p>Certified coatings for high humidity and coastal conditions.</p>
-        </div>
+    <div class="project-card">
+      <img src="images/steel_bridges.webp" alt="Steel Bridges" loading="lazy"
+           data-title="Steel Bridges"
+           data-desc="Certified coatings for high humidity and coastal conditions.">
+      <h3>Steel Bridges</h3>
+      <p>Certified coatings for high humidity and coastal conditions.</p>
+    </div>
 
-        <div class="project-card">
-          <img src="images/power_plant_piping.webp" alt="Power Plant Piping" loading="lazy">
-          <h3>Power Plant Piping</h3>
-          <p>High-temp and abrasion-resistant coatings ensuring zero degradation.</p>
-        </div>
+    <div class="project-card">
+      <img src="images/power_plant_piping.webp" alt="Power Plant Piping" loading="lazy"
+           data-title="Power Plant Piping"
+           data-desc="High-temp and abrasion-resistant coatings ensuring zero degradation.">
+      <h3>Power Plant Piping</h3>
+      <p>High-temp and abrasion-resistant coatings ensuring zero degradation.</p>
+    </div>
 
-      </div>
-    </section>
+  </div>
+</section>
+
 
     <!-- Clients Section -->
     <section id="clients" class="animate-section">
@@ -276,11 +306,15 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <p>&copy; 2024 Ganesh Engineers. All Rights Reserved.</p>
-    <p class="dev-credit">
-      site developed by Raj<span class="red-i">i</span>nfoworks
-    </p>
-  </footer>
+  <p>&copy; 2024 Ganesh Engineers. All Rights Reserved.</p>
+  <p class="dev-credit">
+    site developed by 
+    <a href="https://raj-portfolio-nuu4.onrender.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+      Raj<span class="red-i">i</span>nfoworks
+    </a>
+  </p>
+</footer>
+
 
   <!-- ===== SCRIPTS ===== -->
   <script src="script.js"></script>

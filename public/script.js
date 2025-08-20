@@ -4,27 +4,40 @@
  * ==============================
  */
 document.addEventListener("DOMContentLoaded", () => {
+
+  
   /* ==============================
-     📱 Mobile Navigation Toggle
-  ============================== */
-  const navToggle = document.querySelector(".nav-toggle");
-  const navLinks = document.querySelector(".nav-links");
+   📱 Mobile Navigation Toggle
+============================== */
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-  if (navToggle && navLinks) {
-    // Toggle menu on hamburger click
-    navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      navToggle.classList.toggle("open");
-    });
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    navToggle.classList.toggle("open");
+  });
 
-    // Close menu when clicking a link (mobile only)
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        navToggle.classList.remove("open");
-      });
+  // Close menu when clicking a link
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      navToggle.classList.remove("open");
     });
+  });
+}
+
+// Optional: sticky header shadow on scroll
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header");
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
   }
+});
+
+
 
   /* ==============================
      📩 Contact Form Submission

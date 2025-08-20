@@ -41,16 +41,20 @@ body {
 }
 
 /* ==========================================================================
-   Header & Navigation
-   ========================================================================== */
+   Header & Navigation – Professional & Responsive
+============================================================================= */
 .header {
   background: var(--bg-section);
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(8px); /* subtle glass effect */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
+/* Navigation Container */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -58,20 +62,29 @@ body {
   padding: 1rem 2rem;
 }
 
+/* Brand / Logo */
 .brand {
   text-decoration: none;
   color: var(--secondary);
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.brand:hover {
+  transform: scale(1.05);
+  color: var(--primary);
 }
 
 .brand-custom {
   color: var(--primary);
 }
 
+/* Navigation Links */
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -81,11 +94,28 @@ body {
   text-decoration: none;
   font-weight: 600;
   color: var(--text);
-  transition: color var(--transition-speed);
+  position: relative;
+  padding: 0.2rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
   color: var(--primary);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* Hamburger Toggle */
@@ -94,16 +124,30 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 1100;
 }
 
 .nav-toggle-bar {
   display: block;
-  width: 25px;
+  width: 28px;
   height: 3px;
-  margin: 5px 0;
-  background: #333;
-  border-radius: 2px;
-  transition: background var(--transition-speed);
+  margin: 6px 0;
+  background: var(--text);
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+/* Animate Hamburger into X when active */
+.nav-toggle.open .nav-toggle-bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Mobile Navigation */
@@ -114,16 +158,20 @@ body {
     position: absolute;
     top: 70px;
     right: 0;
-    width: 220px;
+    width: 240px;
     background: var(--bg-section);
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 0 0 0 12px;
-    box-shadow: 0 6px 12px var(--shadow-medium);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
 
   .nav-links.active {
     display: flex;
-    animation: slideDown 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .nav-toggle {
@@ -131,17 +179,22 @@ body {
   }
 }
 
-/* Smooth dropdown animation */
+/* Smooth dropdown animation for desktop hover */
 @keyframes slideDown {
   from {
     opacity: 0;
     transform: translateY(-10%);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Optional: Sticky header shadow on scroll */
+.header.scrolled {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.95);
 }
 
 /* ==========================================================================
@@ -149,7 +202,7 @@ body {
    ========================================================================== */
 .hero-section {
   background: linear-gradient(to bottom, #f5f7fa, #e0e5ec);
-  padding: 12rem 1rem 15rem;
+  padding: 18rem 2rem 22rem;
   text-align: center;
   color: #222;
   display: flex;
@@ -531,9 +584,9 @@ span {
 
 
 
-/* ==========================================================================
-   Services Section
-   ========================================================================== */
+/* ========================================================================== 
+   Services Section – Fully Responsive Text
+============================================================================= */
 #services {
   padding: 4rem 2rem;
   text-align: center;
@@ -560,7 +613,7 @@ span {
 .service-grid {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* desktop layout */
   align-items: stretch;
 }
 
@@ -621,23 +674,31 @@ span {
   top: 0;
 }
 
-
-/* Mobile responsiveness for Services */
+/* ==============================
+   Mobile responsiveness for Services
+   3 cards in a single horizontal row
+============================== */
 @media (max-width: 768px) {
   #services {
     padding: 2rem 1rem;
   }
 
+  #services .section-title {
+    font-size: 1.5rem; /* smaller section title */
+  }
+
   .service-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* keep cards in one row */
     gap: 1rem;
-    justify-content: center;
+    justify-content: space-between;
+    overflow-x: auto; /* allow horizontal scroll */
   }
 
   .service-card {
-    flex: 1 1 45%;
-    margin-bottom: 1rem;
+    flex: 0 0 calc(33.33% - 0.66rem); /* 3 cards per row */
+    margin-bottom: 0;
+    padding: 1.5rem 1rem;
   }
 
   .service-card img {
@@ -645,11 +706,22 @@ span {
     height: auto;
     border-radius: 15px;
   }
+
+  .service-card h3 {
+    font-size: 1rem; /* smaller title */
+  }
+
+  .service-card p {
+    font-size: 0.85rem; /* smaller description text */
+    line-height: 1.4;
+  }
 }
 
-/* ==========================================================================
-   Projects Section
-   ========================================================================== */
+
+
+/* ========================================================================== 
+   Projects Section – Fully Responsive Text
+============================================================================= */
 #projects {
   padding: 4rem 2rem;
   background: var(--bg-section);
@@ -721,8 +793,10 @@ span {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-light);
+  word-wrap: break-word;
 }
 
+/* Gradient overlay effect */
 .project-card::before {
   content: "";
   position: absolute;
@@ -782,28 +856,46 @@ span {
   color: var(--primary);
 }
 
-/* Mobile Responsive for Projects */
+/* ==============================
+   Mobile Responsive for Projects
+   Full Text Responsiveness + 3 Cards in One Row
+============================== */
 @media (max-width: 768px) {
   #projects {
     padding: 2rem 1rem;
   }
 
+  #projects .section-title {
+    font-size: 1.5rem; /* smaller title */
+  }
+
   .project-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* single horizontal row */
     gap: 1rem;
-    justify-content: center;
+    justify-content: space-between;
+    overflow-x: auto; /* horizontal scroll */
   }
 
   .project-card {
-    flex: 1 1 45%;
-    margin-bottom: 1rem;
+    flex: 0 0 calc(33.33% - 0.66rem); /* 3 cards in one row */
+    margin-bottom: 0;
+    padding: 1.5rem 1rem;
   }
 
   .project-card img {
     width: 100%;
     height: auto;
     border-radius: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 1rem; /* smaller project title */
+  }
+
+  .project-card p {
+    font-size: 0.85rem; /* smaller project details text */
+    line-height: 1.4;
   }
 }
 
@@ -887,21 +979,47 @@ span {
   transform: scale(1.1);
 }
 
+/* ==============================
+   Clients Section – Mobile Layout (4 logos per row)
+   ============================== */
 @media (max-width: 768px) {
-  #clients {
-    padding: 3rem 1rem;
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 logos per row */
+    gap: 1.5rem; /* even spacing between logos */
+    justify-items: center;
+    align-items: center;
   }
 
-  .clients-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
+  .client-logo {
+    width: 80px;   /* uniform card width */
+    height: 80px;  /* uniform card height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .client-logo img {
-    width: 90px;
-    height: 90px;
+    width: 70px;  /* logo image size */
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .client-logo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  .client-logo:hover img {
+    transform: scale(1.1);
   }
 }
+
 
 /* ==========================================================================
    Testimonials Section
@@ -1039,14 +1157,14 @@ span {
   font-weight: 600;
   border: none;
   border-radius: 12px;
-  background-color: #d76850;
+  background-color: var(--primary);
   color: #fff;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .contact-form button:hover {
-  background-color: #e07a5f;
+  background-color: #d76850;
   transform: translateY(-2px);
 }
 
