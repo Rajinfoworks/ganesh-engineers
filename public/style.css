@@ -40,8 +40,8 @@ body {
   margin: 0 auto;
 }
 
-/* ==========================================================================
-   Header & Navigation – Professional & Responsive
+/* ========================================================================== 
+   Header & Navigation – Fully Responsive
 ============================================================================= */
 .header {
   background: var(--bg-section);
@@ -49,7 +49,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(8px); /* subtle glass effect */
+  backdrop-filter: blur(8px);
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
 }
@@ -79,6 +79,25 @@ body {
 
 .brand-custom {
   color: var(--primary);
+}
+
+/* Mobile Logo Responsiveness */
+@media (max-width: 768px) {
+  .brand {
+    font-size: 1.5rem;
+  }
+  .brand .brand-custom {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    font-size: 1.2rem;
+  }
+  .brand .brand-custom {
+    font-size: 1.2rem;
+  }
 }
 
 /* Navigation Links */
@@ -155,39 +174,33 @@ body {
   .nav-links {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 70px;
+    position: fixed;
+    top: 0;
     right: 0;
-    width: 240px;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
     background: var(--bg-section);
-    padding: 1rem 1.5rem;
-    border-radius: 0 0 0 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    padding: 3rem 2rem;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
   }
 
   .nav-links.active {
     display: flex;
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   .nav-toggle {
     display: block;
   }
-}
 
-/* Smooth dropdown animation for desktop hover */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  /* Mobile Links Font */
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 1rem 0;
   }
 }
 
@@ -197,9 +210,10 @@ body {
   background: rgba(255,255,255,0.95);
 }
 
-/* ==========================================================================
-   Hero Section
-   ========================================================================== */
+
+/* ==========================================================================  
+   Hero Section – Responsive
+============================================================================= */
 .hero-section {
   background: linear-gradient(to bottom, #f5f7fa, #e0e5ec);
   padding: 18rem 2rem 22rem;
@@ -278,7 +292,27 @@ body {
   z-index: 1;
 }
 
-/* Responsive Hero */
+/* ==============================
+   Responsive Hero Section
+============================== */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 12rem 1.5rem 14rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-btn {
+    padding: 0.8rem 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     padding: 8rem 1rem 10rem;
@@ -293,7 +327,45 @@ body {
   }
 
   .hero-btn {
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 1.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 6rem 0.8rem 8rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .hero-btn {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Adjust decorative circles for very small screens */
+  .hero-section::before {
+    width: 120px;
+    height: 120px;
+    top: -30px;
+    left: -30px;
+  }
+
+  .hero-section::after {
+    width: 150px;
+    height: 150px;
+    bottom: -30px;
+    right: -30px;
   }
 }
 
@@ -329,260 +401,85 @@ body {
   font-size: 1.1rem;
 }
 
-/* ===================== General Section Decorations ===================== */
-.section,
-.navbar,
-.footer {
-  position: relative;
-  overflow: hidden;
+/* ========================================================================== 
+   About Section
+============================================================================= */
+.about-section {
+  padding: 4rem 2rem;
+  background: var(--bg-section);
+  color: var(--text);
+  text-align: left;
 }
 
-/* Decorative Circles */
-.section::before,
-.section::after,
-.navbar::before,
-.navbar::after,
-.footer::before,
-.footer::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
+.about-section .section-header h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+  font-weight: 700;
 }
 
-/* Hero / Top Sections */
-.hero-section::before {
-  width: 200px;
-  height: 200px;
-  background: rgba(224, 122, 95, 0.1);
-  top: -50px;
-  left: -50px;
+.about-section .section-header .subtitle {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
 }
 
-.hero-section::after {
-  width: 250px;
-  height: 250px;
-  background: rgba(61, 64, 91, 0.08);
-  bottom: -50px;
-  right: -50px;
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: var(--text-light);
 }
 
-/* About Section */
-.about-section::before {
-  width: 150px;
-  height: 150px;
-  background: rgba(224, 122, 95, 0.08);
-  top: -30px;
-  right: -30px;
+.about-section ul {
+  list-style: disc inside;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
 }
 
-.about-section::after {
-  width: 200px;
-  height: 200px;
-  background: rgba(61, 64, 91, 0.05);
-  bottom: -40px;
-  left: -40px;
-}
-
-/* Services Section */
-.services-section::before {
-  width: 180px;
-  height: 180px;
-  background: rgba(224, 122, 95, 0.07);
-  top: -40px;
-  left: -40px;
-}
-
-.services-section::after {
-  width: 220px;
-  height: 220px;
-  background: rgba(61, 64, 91, 0.06);
-  bottom: -50px;
-  right: -50px;
-}
-
-/* Contact Section */
-.contact-section::before {
-  width: 160px;
-  height: 160px;
-  background: rgba(224, 122, 95, 0.05);
-  top: -30px;
-  left: -30px;
-}
-
-.contact-section::after {
-  width: 200px;
-  height: 200px;
-  background: rgba(61, 64, 91, 0.04);
-  bottom: -40px;
-  right: -40px;
-}
-
-/* Footer Section */
-.footer::before {
-  width: 200px;
-  height: 200px;
-  background: rgba(224, 122, 95, 0.06);
-  top: -50px;
-  right: -50px;
-}
-
-.footer::after {
-  width: 250px;
-  height: 250px;
-  background: rgba(61, 64, 91, 0.05);
-  bottom: -60px;
-  left: -60px;
-}
-
-/* ===================== Cards / Boxes Consistency ===================== */
-.card,
-.service-card,
-.project-card,
-.testimonial-card,
-.contact-form,
-.contact-info {
-  position: relative;
-  z-index: 1;
-  background: #fdfdfd;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover,
-.service-card:hover,
-.project-card:hover,
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-/* Buttons */
-.btn,
-.btn-primary {
-  background: #e07a5f;
-  color: #fff;
-  border-radius: 8px;
-  padding: 0.85rem 1.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover,
-.btn-primary:hover {
-  background: #d95d43;
-  transform: translateY(-2px);
-}
-
-/* ===================== Typography ===================== */
-h1,
-h2,
-h3,
-h4 {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-}
-
-p,
-li,
-span {
-  font-family: 'Poppins', sans-serif;
-  color: #555;
+.about-section ul li {
+  font-size: 1rem;
   line-height: 1.6;
+  margin-bottom: 0.5rem;
 }
 
-/* Small bubbles for all sections */
-.section::before,
-.section::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.section::before {
-  width: 120px;
-  height: 120px;
-  background: rgba(224, 122, 95, 0.08);
-  top: -30px;
-  left: -30px;
-}
-
-.section::after {
-  width: 100px;
-  height: 100px;
-  background: rgba(61, 64, 91, 0.06);
-  bottom: -20px;
-  right: -20px;
-}
-
-/* Make every section a positioning context */
-.section {
-  position: relative;
-  /* This is required for ::before and ::after */
-  overflow: hidden;
-  /* Ensures bubbles don’t overflow badly */
-}
-
-/* Small decorative bubbles on all sections */
-.section::before,
-.section::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Top-left bubble */
-.section::before {
-  width: 120px;
-  height: 120px;
-  background: rgba(224, 122, 95, 0.08);
-  top: -30px;
-  left: -30px;
-}
-
-/* Bottom-right bubble */
-.section::after {
-  width: 100px;
-  height: 100px;
-  background: rgba(61, 64, 91, 0.06);
-  bottom: -20px;
-  right: -20px;
-}
-
-/* ===================== Mobile Responsive ===================== */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-
-  .section::before,
-  .section::after,
-  .navbar::before,
-  .navbar::after,
-  .footer::before,
-  .footer::after {
-    width: 100px;
-    height: 100px;
-    top: -20px;
-    left: -20px;
-    bottom: -20px;
-    right: -20px;
+  .about-section {
+    padding: 2rem 1rem;
   }
 
-  .grid,
-  .services-grid,
-  .projects-grid,
-  .testimonials-grid {
-    grid-template-columns: 1fr;
+  .about-section .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-section .section-header .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-section p,
+  .about-section ul li {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 }
 
+@media (max-width: 480px) {
+  .about-section .section-header h2 {
+    font-size: 1.4rem;
+  }
 
+  .about-section .section-header .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .about-section p,
+  .about-section ul li {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
 
 /* ========================================================================== 
    Services Section – Fully Responsive Text
@@ -1021,9 +918,9 @@ span {
 }
 
 
-/* ==========================================================================
+/* ========================================================================== 
    Testimonials Section
-   ========================================================================== */
+============================================================================= */
 #testimonials {
   padding: 4rem 2rem;
   background: var(--bg-section);
@@ -1085,19 +982,54 @@ span {
   text-align: right;
 }
 
+/* ==============================
+   Mobile Responsiveness
+============================== */
 @media (max-width: 768px) {
   #testimonials {
     padding: 3rem 1rem;
   }
 
+  #testimonials .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
   .testimonials-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* single column for mobile */
+    gap: 1.5rem;
   }
 
   .testimonial-card {
     width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .testimonial-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .testimonial-card cite {
+    font-size: 0.9rem;
   }
 }
+
+@media (max-width: 480px) {
+  #testimonials .section-title {
+    font-size: 1.4rem;
+  }
+
+  .testimonial-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .testimonial-card cite {
+    font-size: 0.85rem;
+  }
+}
+
 
 /* ==========================================================================  
    Contact Section
@@ -1220,30 +1152,60 @@ span {
     font-size: 2rem;
   }
 
-  .contact-info {
-    padding: 1.2rem 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .contact-info h3 {
-    font-size: 1.6rem;
-  }
-
-  .contact-info p {
-    font-size: 0.95rem;
+  #contact p {
+    font-size: 1rem;
   }
 
   .contact-form input,
   .contact-form textarea,
   .contact-form button {
     font-size: 0.95rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .contact-info {
+    padding: 1.2rem 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact h2 {
+    font-size: 1.6rem;
+  }
+
+  #contact p {
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 0.9rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-info p {
+    font-size: 0.85rem;
   }
 }
 
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
+/* ==========================================================================  
+   Footer – Responsive
+============================================================================= */
 .site-footer {
   background: var(--bg-section);
   padding: 1rem 2rem;
@@ -1274,9 +1236,9 @@ span {
   font-weight: bold;
 }
 
-/* ==========================================================================
+/* ==========================================================================  
    Utilities & Accessibility
-   ========================================================================== */
+============================================================================= */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -1290,17 +1252,31 @@ textarea:focus-visible {
   display: none !important;
 }
 
-/* Extra Mobile Tweaks */
+/* ==========================================================================  
+   Mobile Responsive Footer & Text
+============================================================================= */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .site-footer .dev-credit {
+    font-size: 0.8rem;
+  }
+}
+
 @media (max-width: 480px) {
-  .hero-section h1 {
-    font-size: 2.2rem;
+  .site-footer {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.85rem;
   }
 
-  .hero-section p {
-    font-size: 1rem;
+  .site-footer a {
+    font-size: 0.85rem;
   }
 
-  .section-header h2 {
-    font-size: 2rem;
+  .site-footer .dev-credit {
+    font-size: 0.75rem;
   }
 }
