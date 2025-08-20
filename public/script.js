@@ -164,3 +164,54 @@ function showToast(message, type = "info") {
     toast.addEventListener("transitionend", () => toast.remove());
   }, 3000);
 }
+
+// Image Popup
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const captionText = document.getElementById("caption");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll(".service-card img").forEach(img => {
+  img.addEventListener("click", function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = `<strong>${this.dataset.title}</strong><br>${this.dataset.desc}`;
+  });
+});
+
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+window.onclick = function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+// project section popup
+{
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".project-card img").forEach(img => {
+    img.addEventListener("click", function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = `<strong>${this.dataset.title}</strong><br>${this.dataset.desc}`;
+    });
+  });
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+
