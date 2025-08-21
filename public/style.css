@@ -70,7 +70,8 @@ body {
 }
 
 .brand-logo {
-  max-width: 160px;  /* default size */
+  max-width: 160px;
+  /* default size */
   height: auto;
   display: block;
   transition: transform 0.3s ease;
@@ -1433,6 +1434,7 @@ p {
     padding: 0.5rem;
     font-size: 0.8rem;
   }
+
   .site-footer .dev-credit {
     font-size: 0.7rem;
   }
