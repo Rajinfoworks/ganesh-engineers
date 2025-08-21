@@ -1392,22 +1392,24 @@ p {
 
 
 
-/* ==========================================================================  
-   Footer – Responsive
-============================================================================= */
+/* =========================
+   Footer (Compact & Responsive)
+========================= */
 .site-footer {
   background: var(--bg-section);
-  padding: 1rem 2rem;
+  padding: 0.6rem 1rem;
   text-align: center;
   color: var(--text);
-  font-size: 0.95rem;
-  font-weight: 600;
-  box-shadow: inset 0 2px var(--shadow-light);
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: inset 0 1px var(--shadow-light);
+  line-height: 1.4;
 }
 
 .site-footer a {
   color: var(--primary);
   text-decoration: none;
+  font-weight: 600;
 }
 
 .site-footer a:hover {
@@ -1415,8 +1417,8 @@ p {
 }
 
 .site-footer .dev-credit {
-  margin-top: 0.5rem;
-  font-size: 0.875rem;
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
   color: var(--text-light);
 }
 
@@ -1425,47 +1427,13 @@ p {
   font-weight: bold;
 }
 
-/* ==========================================================================  
-   Utilities & Accessibility
-============================================================================= */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--primary);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* ==========================================================================  
-   Mobile Responsive Footer & Text
-============================================================================= */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .site-footer {
-    padding: 1rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .site-footer .dev-credit {
+    padding: 0.5rem;
     font-size: 0.8rem;
   }
-}
-
-@media (max-width: 480px) {
-  .site-footer {
-    padding: 0.8rem 0.5rem;
-    font-size: 0.85rem;
-  }
-
-  .site-footer a {
-    font-size: 0.85rem;
-  }
-
   .site-footer .dev-credit {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 }
