@@ -62,43 +62,36 @@ body {
   padding: 1rem 2rem;
 }
 
-/* Brand / Logo */
+/* =========================
+   Brand / Logo (Non-clickable)
+========================= */
 .brand {
-  text-decoration: none;
-  color: var(--secondary);
-  font-weight: 700;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
 }
 
-.brand:hover {
+.brand-logo {
+  max-width: 160px;  /* default size */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
   transform: scale(1.05);
-  color: var(--primary);
 }
 
-.brand-custom {
-  color: var(--primary);
-}
-
-/* Mobile Logo Responsiveness */
+/* =========================
+   Mobile Responsiveness
+========================= */
 @media (max-width: 768px) {
-  .brand {
-    font-size: 1.5rem;
-  }
-
-  .brand .brand-custom {
-    font-size: 1.5rem;
+  .brand-logo {
+    max-width: 120px;
   }
 }
 
 @media (max-width: 480px) {
-  .brand {
-    font-size: 1.2rem;
-  }
-
-  .brand .brand-custom {
-    font-size: 1.2rem;
+  .brand-logo {
+    max-width: 100px;
   }
 }
 
