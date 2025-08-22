@@ -1,12 +1,12 @@
 /**
  * ==============================
- * 📜 Ganesh Engineers – Main Script (Clean & Optimized)
+ * 📜 Ganesh Engineers – Main Script (Optimized)
  * ==============================
  */
 document.addEventListener("DOMContentLoaded", () => {
   /* ==============================
-   📱 Mobile Navigation Toggle
-============================== */
+     📱 Mobile Navigation Toggle
+  ============================== */
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
 
@@ -16,18 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
       navToggle.classList.toggle("open");
     };
 
-    // Toggle menu on hamburger click
     navToggle.addEventListener("click", toggleMenu);
 
-    // Close menu when clicking a link (mobile only)
-    navLinks.querySelectorAll("a").forEach(link => {
+    navLinks.querySelectorAll("a").forEach(link =>
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
         navToggle.classList.remove("open");
-      });
-    });
+      })
+    );
 
-    // Optional: close menu when clicking outside
     document.addEventListener("click", (e) => {
       if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
         navLinks.classList.remove("active");
@@ -35,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
 
   /* ==============================
      📩 Contact Form Submission
@@ -46,11 +42,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailField = document.getElementById("email");
     const messageField = document.getElementById("message");
 
-    // Inline alert box
     const alertBox = document.createElement("div");
     alertBox.id = "form-alert";
     alertBox.style.display = "none";
     contactForm.appendChild(alertBox);
+
+    const showInlineAlert = (message, type) => {
+      Object.assign(alertBox.style, {
+        display: "block",
+        marginTop: "12px",
+        padding: "12px",
+        borderRadius: "8px",
+        fontSize: "14px",
+        fontWeight: "500",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+        backgroundColor: type === "error" ? "#ffe6e6" : "#e6ffe6",
+        color: type === "error" ? "#b30000" : "#006600",
+        border: type === "error" ? "1px solid #ff9999" : "1px solid #99ff99"
+      });
+      alertBox.textContent = message;
+    };
+
+    const hideInlineAlert = () => {
+      alertBox.style.display = "none";
+      alertBox.textContent = "";
+    };
 
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -84,27 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Form submission error:", err);
         showToast("⚠️ Server error. Try again later.", "error");
       }
-
     });
-
-    function showInlineAlert(message, type) {
-      alertBox.textContent = message;
-      alertBox.style.display = "block";
-      alertBox.style.marginTop = "12px";
-      alertBox.style.padding = "12px";
-      alertBox.style.borderRadius = "8px";
-      alertBox.style.fontSize = "14px";
-      alertBox.style.fontWeight = "500";
-      alertBox.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
-      alertBox.style.backgroundColor = type === "error" ? "#ffe6e6" : "#e6ffe6";
-      alertBox.style.color = type === "error" ? "#b30000" : "#006600";
-      alertBox.style.border = type === "error" ? "1px solid #ff9999" : "1px solid #99ff99";
-    }
-
-    function hideInlineAlert() {
-      alertBox.style.display = "none";
-      alertBox.textContent = "";
-    }
   }
 });
 
@@ -146,7 +142,6 @@ function showToast(message, type = "info") {
   toast.className = `toast ${type}`;
   toast.textContent = message;
 
-  // Style
   Object.assign(toast.style, {
     position: "fixed",
     bottom: "20px",
@@ -178,53 +173,27 @@ function showToast(message, type = "info") {
   }, 3000);
 }
 
-// Image Popup
-const modal = document.getElementById("imgModal");
-const modalImg = document.getElementById("modalImg");
-const captionText = document.getElementById("caption");
-const closeBtn = document.querySelector(".close");
-
-document.querySelectorAll(".service-card img").forEach(img => {
-  img.addEventListener("click", function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = `<strong>${this.dataset.title}</strong><br>${this.dataset.desc}`;
-  });
-});
-
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-};
-
-window.onclick = function (e) {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-};
-
-// project section popup
-{
+/* ==============================
+   🖼️ Image & Project Modal Popup (Unified)
+============================== */
+(function setupImageModal() {
   const modal = document.getElementById("imgModal");
+  if (!modal) return;
+
   const modalImg = document.getElementById("modalImg");
   const captionText = document.getElementById("caption");
-  const closeBtn = document.querySelector(".close");
+  const closeBtn = modal.querySelector(".close");
 
-  document.querySelectorAll(".project-card img").forEach(img => {
-    img.addEventListener("click", function () {
-      modal.style.display = "block";
-      modalImg.src = this.src;
-      captionText.innerHTML = `<strong>${this.dataset.title}</strong><br>${this.dataset.desc}`;
-    });
+  const openModal = (img) => {
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    captionText.innerHTML = `<strong>${img.dataset.title}</strong><br>${img.dataset.desc}`;
+  };
+
+  document.querySelectorAll(".service-card img, .project-card img").forEach(img => {
+    img.addEventListener("click", () => openModal(img));
   });
 
-  closeBtn.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  window.onclick = function (e) {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  };
-}
-
+  closeBtn.addEventListener("click", () => modal.style.display = "none");
+  window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+})();
