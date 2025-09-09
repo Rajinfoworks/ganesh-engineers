@@ -197,3 +197,7 @@ function showToast(message, type = "info") {
   closeBtn.addEventListener("click", () => modal.style.display = "none");
   window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
 })();
+
+
+// Disable right-click on entire page
+document.addEventListener('contextmenu', event => event.preventDefault());

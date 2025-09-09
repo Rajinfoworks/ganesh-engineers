@@ -1,16 +1,14 @@
-/* ==========================================================================
+/* ========================================================================== 
    Ganesh Engineers — Modern Professional Theme (Clean & Responsive)
-   ========================================================================== */
+============================================================================= */
 
 /* ==== Color Variables ==== */
 :root {
   --bg-light: #f7f7f8;
   --bg-section: #fff;
   --bg-alt: #f0e9e4;
-  --primary: #e07a5f;
-  /* Coral / Orange */
-  --secondary: #3d405b;
-  /* Dark muted blue */
+  --primary: #e07a5f;       /* Coral / Orange */
+  --secondary: #3d405b;     /* Dark muted blue */
   --text: #2c2c2c;
   --text-light: #555;
   --shadow-light: rgba(0, 0, 0, 0.05);
@@ -45,13 +43,13 @@ body {
 ============================================================================= */
 .header {
   background: var(--bg-section);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--shadow-light);
   position: sticky;
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(8px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  transition: all var(--transition-speed) ease;
 }
 
 /* Navigation Container */
@@ -62,39 +60,25 @@ body {
   padding: 1rem 2rem;
 }
 
-/* =========================
-   Brand / Logo (Non-clickable)
-========================= */
+/* Brand / Logo */
 .brand {
   display: inline-block;
 }
 
 .brand-logo {
   max-width: 160px;
-  /* default size */
   height: auto;
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-speed);
 }
 
 .brand-logo:hover {
   transform: scale(1.05);
 }
 
-/* =========================
-   Mobile Responsiveness
-========================= */
-@media (max-width: 768px) {
-  .brand-logo {
-    max-width: 120px;
-  }
-}
-
-@media (max-width: 480px) {
-  .brand-logo {
-    max-width: 100px;
-  }
-}
+/* Mobile Logo Sizes */
+@media (max-width: 768px) { .brand-logo { max-width: 120px; } }
+@media (max-width: 480px) { .brand-logo { max-width: 100px; } }
 
 /* Navigation Links */
 .nav-links {
@@ -111,7 +95,7 @@ body {
   color: var(--text);
   position: relative;
   padding: 0.2rem 0;
-  transition: color 0.3s ease;
+  transition: color var(--transition-speed);
 }
 
 .nav-links a::after {
@@ -122,7 +106,7 @@ body {
   bottom: -3px;
   left: 0;
   background-color: var(--primary);
-  transition: width 0.3s ease;
+  transition: width var(--transition-speed);
 }
 
 .nav-links a:hover {
@@ -152,15 +136,13 @@ body {
   transition: all 0.4s ease;
 }
 
-/* Animate Hamburger into X when active */
+/* Hamburger to X animation */
 .nav-toggle.open .nav-toggle-bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .nav-toggle.open .nav-toggle-bar:nth-child(2) {
   opacity: 0;
 }
-
 .nav-toggle.open .nav-toggle-bar:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
@@ -178,7 +160,7 @@ body {
     height: 100vh;
     background: var(--bg-section);
     padding: 3rem 2rem;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: -4px 0 20px var(--shadow-medium);
     z-index: 1000;
     transform: translateX(100%);
     transition: transform 0.4s ease;
@@ -189,23 +171,212 @@ body {
     transform: translateX(0);
   }
 
-  .nav-toggle {
-    display: block;
-  }
+  .nav-toggle { display: block; }
 
-  /* Mobile Links Font */
   .nav-links a {
     font-size: 1.2rem;
     padding: 1rem 0;
   }
 }
 
-/* Optional: Sticky header shadow on scroll */
+/* Sticky header shadow when scrolling */
 .header.scrolled {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px var(--shadow-medium);
   background: rgba(255, 255, 255, 0.95);
+  transition: all var(--transition-speed) ease;
 }
 
+/* ========================================================================== 
+   General Sections — Ganesh Engineers Modern Theme
+============================================================================= */
+
+/* ==== Section Styling ==== */
+.section {
+  position: relative;          /* for decorative elements */
+  padding: 5rem 2rem;
+  background: var(--bg-section);
+  overflow: hidden;            /* ensures decorative bubbles stay contained */
+  transition: background var(--transition-speed);
+}
+
+.section:nth-of-type(even) {
+  background: var(--bg-alt);
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-header h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* ==== Decorative Bubbles ==== */
+.section::before,
+.section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section::before {
+  width: 120px;
+  height: 120px;
+  background: rgba(224, 122, 95, 0.08);
+  top: -30px;
+  left: -30px;
+}
+
+.section::after {
+  width: 100px;
+  height: 100px;
+  background: rgba(61, 64, 91, 0.06);
+  bottom: -20px;
+  right: -20px;
+}
+
+/* ==== Cards / Boxes ==== */
+.card,
+.contact-form,
+.contact-info,
+.service-card,
+.project-card,
+.testimonial-card {
+  background: var(--bg-section);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px var(--shadow-light);
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.service-card:hover,
+.project-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px var(--shadow-medium);
+}
+
+/* ==== Buttons ==== */
+.btn,
+.btn-primary {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--bg-section);
+  border-radius: 8px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition-speed), transform 0.2s ease;
+}
+
+.btn:hover,
+.btn-primary:hover {
+  background: #d95d43;
+  transform: translateY(-2px);
+}
+
+/* ==== Typography ==== */
+h2,
+h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--secondary);
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ==== Forms ==== */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  font-family: inherit;
+}
+
+.contact-form button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* ==== Contact Info Box ==== */
+.contact-info {
+  background: var(--bg-section);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px var(--shadow-light);
+  margin-top: 2rem;
+  border-left: 5px solid var(--primary);
+}
+
+/* ==== Responsive Adjustments ==== */
+@media (max-width: 768px) {
+
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .section::before,
+  .section::after {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .service-grid,
+  .project-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section::before,
+  .section::after {
+    width: 60px;
+    height: 60px;
+  }
+}
 
 /* ==========================================================================  
    Hero Section – Fully Responsive
@@ -367,387 +538,51 @@ body {
   }
 }
 
-/* ==========================================================================
-   General Sections
-   ========================================================================== */
-.section {
-  padding: 5rem 0;
-  background: var(--bg-section);
-  transition: background var(--transition-speed);
-}
-
-.section:nth-of-type(even) {
-  background: var(--bg-alt);
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.section-header h2 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: var(--secondary);
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  color: var(--text-light);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-/* ===================== General Section Decorations ===================== */
-.section {
-  position: relative;
-  padding: 5rem 2rem;
-  overflow: hidden;
-}
-
-.section::before,
-.section::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.section::before {
-  width: 150px;
-  height: 150px;
-  background: rgba(224, 122, 95, 0.05);
-  top: -30px;
-  left: -30px;
-}
-
-.section::after {
-  width: 200px;
-  height: 200px;
-  background: rgba(61, 64, 91, 0.05);
-  bottom: -40px;
-  right: -40px;
-}
-
-/* ===================== Cards / Boxes ===================== */
-.card,
-.contact-form,
-.contact-info,
-.service-card,
-.project-card,
-.testimonial-card {
-  background: #fdfdfd;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover,
-.service-card:hover,
-.project-card:hover,
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-/* ===================== Buttons ===================== */
-.btn,
-.btn-primary {
-  background: #e07a5f;
-  color: #fff;
-  border-radius: 8px;
-  padding: 0.85rem 1.5rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover,
-.btn-primary:hover {
-  background: #d95d43;
-  transform: translateY(-2px);
-}
-
-/* ===================== Typography ===================== */
-h2,
-h3 {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-}
-
-p {
-  font-family: 'Poppins', sans-serif;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* ===================== Forms ===================== */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.85rem;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  margin-top: 0.5rem;
-}
-
-.contact-form button {
-  width: 100%;
-  margin-top: 1rem;
-}
-
-/* ===================== Contact Info ===================== */
-.contact-info {
-  background: #fdfdfd;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  margin-top: 2rem;
-  border-left: 5px solid #e07a5f;
-}
-
-/* ===================== Mobile Responsive ===================== */
-@media (max-width: 768px) {
-
-  .section::before,
-  .section::after {
-    width: 100px;
-    height: 100px;
-    top: -20px;
-    left: -20px;
-    bottom: -20px;
-    right: -20px;
-  }
-
-  .contact-wrapper {
-    flex-direction: column;
-  }
-
-  .service-grid,
-  .project-grid,
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Make every section a positioning context */
-.section {
-  position: relative;
-  /* This is required for ::before and ::after */
-  overflow: hidden;
-  /* Ensures bubbles don’t overflow badly */
-}
-
-/* Small decorative bubbles on all sections */
-.section::before,
-.section::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Top-left bubble */
-.section::before {
-  width: 120px;
-  height: 120px;
-  background: rgba(224, 122, 95, 0.08);
-  top: -30px;
-  left: -30px;
-}
-
-/* Bottom-right bubble */
-.section::after {
-  width: 100px;
-  height: 100px;
-  background: rgba(61, 64, 91, 0.06);
-  bottom: -20px;
-  right: -20px;
-}
-
-
 
 /* ========================================================================== 
-   Services Section – Fully Responsive Text
-============================================================================= */
-#services {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-#services .section-title {
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
-  color: var(--text);
-  font-weight: 700;
-  position: relative;
-}
-
-#services .section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  margin: 0.8rem auto 0;
-  background: var(--primary);
-  border-radius: 2px;
-}
-
-.service-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* desktop layout */
-  align-items: stretch;
-}
-
-.service-card {
-  background: var(--bg-section);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.service-card img {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 1.2rem;
-  border-radius: 20px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover img {
-  transform: scale(1.1);
-}
-
-.service-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.6rem;
-  color: var(--secondary);
-  font-weight: 600;
-}
-
-.service-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--text-light);
-}
-
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, rgba(224, 122, 95, 0.15), transparent);
-  transition: top 0.4s ease;
-}
-
-.service-card:hover::before {
-  top: 0;
-}
-
-/* ==============================
-   Mobile responsiveness for Services
-   3 cards in a single horizontal row
-============================== */
-@media (max-width: 768px) {
-  #services {
-    padding: 2rem 1rem;
-  }
-
-  #services .section-title {
-    font-size: 1.5rem;
-    /* smaller section title */
-  }
-
-  .service-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    /* keep cards in one row */
-    gap: 1rem;
-    justify-content: space-between;
-    overflow-x: auto;
-    /* allow horizontal scroll */
-  }
-
-  .service-card {
-    flex: 0 0 calc(33.33% - 0.66rem);
-    /* 3 cards per row */
-    margin-bottom: 0;
-    padding: 1.5rem 1rem;
-  }
-
-  .service-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-  }
-
-  .service-card h3 {
-    font-size: 1rem;
-    /* smaller title */
-  }
-
-  .service-card p {
-    font-size: 0.85rem;
-    /* smaller description text */
-    line-height: 1.4;
-  }
-}
-
-/* ========================================================================== 
-   About Section
+   About Section — Modern Clean Design
 ============================================================================= */
 .about-section {
+  position: relative;
   padding: 4rem 2rem;
   background: var(--bg-section);
   color: var(--text);
   text-align: left;
+  overflow: hidden;
+}
+
+.about-section .section-header {
+  margin-bottom: 2.5rem;
 }
 
 .about-section .section-header h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--secondary);
   font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 1rem;
 }
 
 .about-section .section-header .subtitle {
   font-size: 1.2rem;
+  font-weight: 600;
   color: var(--primary);
   margin-bottom: 2rem;
+  display: block;
 }
 
+/* Paragraphs */
 .about-section p {
   font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
   color: var(--text-light);
 }
 
+/* Lists */
 .about-section ul {
   list-style: disc inside;
-  margin-bottom: 1.5rem;
   padding-left: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .about-section ul li {
@@ -756,10 +591,36 @@ p {
   margin-bottom: 0.5rem;
 }
 
-/* Mobile Responsiveness */
+/* Decorative bubbles (optional) */
+.about-section::before,
+.about-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-section::before {
+  width: 100px;
+  height: 100px;
+  background: rgba(224, 122, 95, 0.05);
+  top: -20px;
+  left: -20px;
+}
+
+.about-section::after {
+  width: 80px;
+  height: 80px;
+  background: rgba(61, 64, 91, 0.04);
+  bottom: -20px;
+  right: -20px;
+}
+
+/* ===================== Mobile Responsive ===================== */
 @media (max-width: 768px) {
   .about-section {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem;
   }
 
   .about-section .section-header h2 {
@@ -779,6 +640,10 @@ p {
 }
 
 @media (max-width: 480px) {
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
   .about-section .section-header h2 {
     font-size: 1.4rem;
   }
@@ -794,21 +659,166 @@ p {
   }
 }
 
+/* ========================================================================== 
+   Services Section — Clean & Responsive
+============================================================================= */
+#services {
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--bg-alt);
+}
+
+#services .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+#services .section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.8rem auto 0;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Grid Layout for Desktop */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Individual Service Card */
+.service-card {
+  background: var(--bg-section);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Service Card Image */
+.service-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Service Card Text */
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/* Gradient overlay on hover */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(224, 122, 95, 0.15), transparent);
+  transition: top 0.4s ease;
+  z-index: 0;
+}
+
+.service-card:hover::before {
+  top: 0;
+}
+
+/* ============================== 
+   Mobile Responsiveness
+============================================================================= */
+@media (max-width: 768px) {
+  #services {
+    padding: 2rem 1rem;
+  }
+
+  #services .section-title {
+    font-size: 1.5rem;
+  }
+
+  /* Horizontal scroll for service cards */
+  .service-grid {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+
+  .service-card {
+    flex: 0 0 calc(70% - 1rem);
+    padding: 1.5rem 1rem;
+    min-width: 220px;
+  }
+
+  .service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+
+
+
 
 /* ========================================================================== 
-   Projects Section – Fully Responsive Text
+   Projects Section — Clean & Responsive
 ============================================================================= */
 #projects {
+  position: relative;
   padding: 4rem 2rem;
-  background: var(--bg-section);
   text-align: center;
+  background: var(--bg-alt);
+  box-sizing: border-box;
 }
 
 #projects .section-title {
   font-size: 2rem;
-  margin-bottom: 2.5rem;
-  color: var(--secondary);
   font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 2.5rem;
   position: relative;
 }
 
@@ -822,33 +832,36 @@ p {
   border-radius: 2px;
 }
 
+/* Grid Layout for Desktop */
 .project-grid {
   display: grid;
-  gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   align-items: stretch;
 }
 
+/* Individual Project Card */
 .project-card {
   background: var(--bg-section);
   border-radius: 12px;
   padding: 2rem 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
+/* Project Card Image */
 .project-card img {
   width: 100px;
   height: 100px;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   border-radius: 20px;
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -858,6 +871,7 @@ p {
   transform: scale(1.1);
 }
 
+/* Project Card Text */
 .project-card h3 {
   font-size: 1.25rem;
   margin-bottom: 0.6rem;
@@ -869,10 +883,9 @@ p {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-light);
-  word-wrap: break-word;
 }
 
-/* Gradient overlay effect */
+/* Gradient overlay on hover */
 .project-card::before {
   content: "";
   position: absolute;
@@ -882,60 +895,16 @@ p {
   height: 100%;
   background: linear-gradient(120deg, rgba(224, 122, 95, 0.15), transparent);
   transition: top 0.4s ease;
+  z-index: 0;
 }
 
 .project-card:hover::before {
   top: 0;
 }
 
-/* Modal Popup */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 80px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-  display: block;
-  margin: auto;
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 12px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
-}
-
-#caption {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.close:hover {
-  color: var(--primary);
-}
-
-/* ==============================
-   Mobile Responsive for Projects
-   Full Text Responsiveness + 3 Cards in One Row
-============================== */
+/* ============================== 
+   Mobile Responsiveness
+============================================================================= */
 @media (max-width: 768px) {
   #projects {
     padding: 2rem 1rem;
@@ -943,24 +912,20 @@ p {
 
   #projects .section-title {
     font-size: 1.5rem;
-    /* smaller title */
   }
 
+  /* Horizontal scroll for project cards on small screens */
   .project-grid {
     display: flex;
-    flex-wrap: nowrap;
-    /* single horizontal row */
     gap: 1rem;
-    justify-content: space-between;
     overflow-x: auto;
-    /* horizontal scroll */
+    padding-bottom: 1rem;
   }
 
   .project-card {
-    flex: 0 0 calc(33.33% - 0.66rem);
-    /* 3 cards in one row */
-    margin-bottom: 0;
+    flex: 0 0 calc(70% - 1rem);
     padding: 1.5rem 1rem;
+    min-width: 220px;
   }
 
   .project-card img {
@@ -971,21 +936,36 @@ p {
 
   .project-card h3 {
     font-size: 1rem;
-    /* smaller project title */
   }
 
   .project-card p {
     font-size: 0.85rem;
-    /* smaller project details text */
     line-height: 1.4;
   }
 }
 
+@media (max-width: 480px) {
+  .project-card {
+    flex: 0 0 calc(90% - 1rem);
+  }
 
-/* ==========================================================================
-   Clients Section
-   ========================================================================== */
+  .project-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .project-card p {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+/* ========================================================================== 
+   Clients Section — Clean & Responsive
+============================================================================= */
 #clients {
+  position: relative;
   padding: 4rem 2rem;
   background: var(--bg-alt);
   text-align: center;
@@ -993,9 +973,9 @@ p {
 
 #clients .section-title {
   font-size: 2rem;
-  margin-bottom: 2.5rem;
-  color: var(--secondary);
   font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 2.5rem;
   position: relative;
 }
 
@@ -1009,19 +989,21 @@ p {
   border-radius: 2px;
 }
 
+/* Clients Grid Layout */
 .clients-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1.8rem;
+  gap: 2rem;
   justify-items: center;
   align-items: center;
 }
 
+/* Individual Client Card */
 .client-logo {
   background: var(--bg-section);
   border-radius: 16px;
   padding: 0.8rem;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -1035,7 +1017,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, rgba(224, 122, 95, 0.1), transparent);
+  background: linear-gradient(120deg, rgba(224, 122, 95, 0.12), transparent);
   transition: top 0.4s ease;
   border-radius: 16px;
 }
@@ -1055,197 +1037,515 @@ p {
 
 .client-logo:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
 }
 
 .client-logo:hover img {
   transform: scale(1.1);
 }
 
-/* ==============================
-   Clients Section – Mobile Layout (4 logos per row)
-   ============================== */
+/* ============================== 
+   Mobile Responsive — Clients Grid
+============================================================================= */
 @media (max-width: 768px) {
   .clients-grid {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 logos per row */
     gap: 1.5rem;
-    /* even spacing between logos */
-    justify-items: center;
-    align-items: center;
   }
 
   .client-logo {
     width: 80px;
-    /* uniform card width */
     height: 80px;
-    /* uniform card height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0.5rem;
   }
 
   .client-logo img {
     width: 70px;
-    /* logo image size */
     height: 70px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
   }
 
   .client-logo:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   }
-
-  .client-logo:hover img {
-    transform: scale(1.1);
-  }
 }
 
 
 /* ========================================================================== 
-   Testimonials Section
+   Testimonials Section — Polished & Fully Responsive
 ============================================================================= */
 #testimonials {
-  padding: 4rem 2rem;
+  position: relative;
+  padding: clamp(3rem, 5vw, 6rem); /* Fluid padding */
   background: var(--bg-section);
   text-align: center;
+  box-sizing: border-box;
 }
 
 #testimonials .section-title {
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
-  color: var(--secondary);
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem); /* Fluid font size */
   font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 2.5rem;
   position: relative;
 }
 
 #testimonials .section-title::after {
   content: "";
   display: block;
-  width: 60px;
-  height: 3px;
+  width: clamp(4rem, 6ch, 6rem);
+  height: 0.3rem;
   margin: 0.8rem auto 0;
   background: var(--primary);
   border-radius: 2px;
 }
 
+/* Testimonials Grid */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 25%, 320px), 1fr));
+  gap: clamp(1.5rem, 2vw, 2.5rem);
   justify-items: center;
   align-items: stretch;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/* Individual Testimonial Card */
 .testimonial-card {
   background: var(--bg-section);
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: clamp(1.5rem, 2vw, 2.2rem);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  background: rgba(224, 122, 95, 0.03); /* subtle hover highlight */
 }
 
 .testimonial-card p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.65;
   color: var(--text-light);
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
 }
 
 .testimonial-card cite {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
   color: var(--secondary);
   font-weight: 600;
   display: block;
   text-align: right;
+  transition: color 0.3s ease;
+}
+
+/* Decorative Overlay for Cards */
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(224, 122, 95, 0.12), transparent);
+  transition: top 0.5s ease;
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.testimonial-card:hover::before {
+  top: 0;
+}
+
+/* Ensure content is above overlay */
+.testimonial-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ==============================
-   Mobile Responsiveness
+   Responsive Adjustments
 ============================== */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   #testimonials {
-    padding: 3rem 1rem;
+    padding: clamp(2.5rem, 4vw, 5rem);
   }
+}
 
-  #testimonials .section-title {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
+@media (max-width: 992px) {
+  #testimonials {
+    padding: clamp(2rem, 3.5vw, 4rem);
   }
 
   .testimonials-grid {
-    grid-template-columns: 1fr;
-    /* single column for mobile */
-    gap: 1.5rem;
+    gap: clamp(1.2rem, 2vw, 1.8rem);
+  }
+}
+
+@media (max-width: 768px) {
+  #testimonials {
+    padding: clamp(1.8rem, 5vw, 3rem);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: clamp(1rem, 3vw, 1.5rem);
   }
 
   .testimonial-card {
-    width: 100%;
-    padding: 1.5rem 1rem;
-  }
-
-  .testimonial-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .testimonial-card cite {
-    font-size: 0.9rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
   }
 }
 
 @media (max-width: 480px) {
-  #testimonials .section-title {
-    font-size: 1.4rem;
+  #testimonials {
+    padding: clamp(1rem, 4vw, 2.5rem);
   }
 
   .testimonial-card p {
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     line-height: 1.4;
   }
 
   .testimonial-card cite {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  }
+}
+
+/* ========================================================================== 
+   FAQ Section — Clean & Responsive
+============================================================================= */
+#faq {
+  position: relative;
+  padding: 4rem 2rem;
+  background: var(--bg-alt);
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+#faq .section-header h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+#faq .section-header h2::after {
+  content: "";
+  display: block;
+  width: 6ch;
+  height: 0.25rem;
+  margin: 0.8rem auto 0;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* FAQ Details */
+#faq details {
+  background: var(--bg-section);
+  border-radius: 12px;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#faq details[open] {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Summary (Question) */
+#faq summary {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary);
+  list-style: none;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+/* Custom toggle icon */
+#faq summary::marker {
+  display: none;
+}
+
+#faq summary::after {
+  content: "➕";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+#faq details[open] summary::after {
+  content: "➖";
+  transform: translateY(-50%);
+}
+
+/* Answer */
+#faq p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin-top: 0.8rem;
+}
+
+/* ==============================
+   Responsive — FAQ Section
+============================== */
+@media (max-width: 992px) {
+  #faq {
+    padding: 3rem 2vw;
+  }
+
+  #faq .section-header h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  #faq summary {
+    font-size: 1rem;
+  }
+
+  #faq p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #faq {
+    padding: 2.5rem 1.5rem;
+  }
+
+  #faq summary {
+    font-size: 0.95rem;
+  }
+
+  #faq p {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #faq {
+    padding: 2rem 1rem;
+  }
+
+  #faq .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  #faq summary {
+    font-size: 0.9rem;
+  }
+
+  #faq p {
     font-size: 0.85rem;
   }
 }
 
+/* ========================================================================== 
+   Blog / Insights Section — Clean & Responsive
+============================================================================= */
+#blog {
+  position: relative;
+  padding: 4rem 2rem;
+  background: var(--bg-alt);
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+#blog .section-header h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+#blog .section-header h2::after {
+  content: "";
+  display: block;
+  width: 6ch;
+  height: 0.25rem;
+  margin: 0.8rem auto 0;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+#blog .section-header .subtitle {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Blog Cards Grid */
+.blog-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Individual Blog Card */
+.blog-card {
+  background: var(--bg-section);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Blog Card Image */
+.blog-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Blog Card Content */
+.blog-card h3 {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin: 1rem 1rem 0.5rem;
+  font-weight: 600;
+}
+
+.blog-card h3 a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-card h3 a:hover {
+  color: var(--primary);
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin: 0 1rem 1rem;
+  flex-grow: 1;
+}
+
+/* ==============================
+   Mobile Responsive — Blog
+============================== */
+@media (max-width: 992px) {
+  #blog {
+    padding: 3rem 2vw;
+  }
+
+  #blog .section-header h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  #blog .section-header .subtitle {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  #blog {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .blog-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .blog-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .blog-card p {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #blog {
+    padding: 2rem 1rem;
+  }
+
+  .blog-card h3 {
+    font-size: 1rem;
+  }
+
+  .blog-card p {
+    font-size: 0.85rem;
+  }
+}
+
+
 /* ==========================================================================  
-   Contact Section
+   Contact Section — Modern & Fully Responsive
 ============================================================================= */
 #contact {
-  padding: 4rem 2rem;
+  position: relative;
+  padding: 4rem 5vw;
   font-family: 'Poppins', sans-serif;
-  max-width: 1200px;
-  width: 100%;
+  max-width: 1400px;
+  width: 95%;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
 #contact h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.6rem, 2.5vw, 2.8rem);
   font-weight: 700;
   text-align: center;
   margin-bottom: 0.5rem;
+  color: var(--secondary);
 }
 
 #contact p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 2rem;
+  font-size: clamp(0.95rem, 1.2vw, 1.2rem);
+  color: var(--text-light);
   text-align: center;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* ------------------------------
@@ -1254,93 +1554,95 @@ p {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1.8rem;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 0.85rem 1rem;
-  font-size: 1rem;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
   border: 1px solid #ddd;
   border-radius: 12px;
   transition: border 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #e07a5f;
-  box-shadow: 0 0 8px rgba(224, 122, 95, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 0 12px rgba(224, 122, 95, 0.25);
 }
 
 .contact-form button {
-  padding: 0.85rem;
-  font-size: 1rem;
+  padding: 1rem 1.2rem;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
   font-weight: 600;
   border: none;
   border-radius: 12px;
   background-color: var(--primary);
   color: #fff;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
 }
 
 .contact-form button:hover {
   background-color: #d76850;
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 /* ------------------------------
-   Contact Info – Professional Card
+   Input Icons Wrapper
 ------------------------------- */
-.contact-info {
-  background: #fdfdfd;
-  padding: 1.5rem 1.8rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  margin-top: 2rem;
-  border-left: 5px solid #d76850;
-  max-width: 1200px;
+.input-wrapper {
+  position: relative;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
 }
 
-.contact-info h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #333;
+.input-wrapper .input-icon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--primary);
 }
 
-.contact-info p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 0.7rem;
-  color: #555;
+.input-wrapper input,
+.input-wrapper textarea {
+  padding-left: 2.8rem; /* space for icon */
+  padding-right: 1rem;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
 }
 
-.contact-info a {
-  color: #d76850;
-  text-decoration: none;
-  font-weight: 500;
+/* ==============================
+   Fully Responsive — Tablets & Mobiles
+============================== */
+@media (max-width: 992px) {
+  #contact {
+    padding: 3.5rem 5vw;
+  }
+
+  .contact-form {
+    gap: 1.6rem;
+  }
 }
 
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* ------------------------------
-   Mobile Responsive
-------------------------------- */
 @media (max-width: 768px) {
   #contact {
-    padding: 3rem 1rem;
+    padding: 3rem 4vw;
   }
 
   #contact h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   #contact p {
@@ -1351,53 +1653,184 @@ p {
   .contact-form textarea,
   .contact-form button {
     font-size: 0.95rem;
-    padding: 0.75rem 0.9rem;
-  }
-
-  .contact-info {
-    padding: 1.2rem 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .contact-info h3 {
-    font-size: 1.5rem;
-  }
-
-  .contact-info p {
-    font-size: 0.9rem;
-    line-height: 1.4;
+    padding: 0.85rem 1rem;
   }
 }
 
 @media (max-width: 480px) {
+  #contact {
+    padding: 2rem 3vw;
+  }
+
   #contact h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   #contact p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .contact-form input,
   .contact-form textarea,
   .contact-form button {
     font-size: 0.9rem;
+    padding: 0.7rem 0.8rem;
   }
 
-  .contact-info h3 {
-    font-size: 1.3rem;
-  }
-
-  .contact-info p {
-    font-size: 0.85rem;
+  .input-wrapper .input-icon {
+    font-size: 1rem;
+    left: 0.8rem;
   }
 }
 
 
+/* =========================
+   Footer Styles — Fully Responsive
+========================= */
+.site-footer {
+  background: var(--bg-section);
+  color: var(--text);
+  padding: 2rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  width: 95%;
+  max-width: 1400px; /* scalable for large screens */
+  margin: 0 auto 2rem;
+}
+
+.footer-logo {
+  max-width: 180px; /* slightly larger for big screens */
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Footer headings */
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+/* Links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links ul li a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: var(--primary);
+}
+
+/* Footer text */
+.footer-about p,
+.footer-contact p,
+.footer-social p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.footer-bottom a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
 
 /* =========================
-   Footer (Compact & Responsive)
+   Responsive Adjustments
 ========================= */
+@media (max-width: 1200px) {
+  .footer-grid {
+    width: 90%;
+    gap: 1.8rem;
+  }
+
+  .footer-logo {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-links ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    max-width: 140px;
+    margin: 0 auto 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo {
+    max-width: 120px;
+  }
+
+  .footer-links ul li {
+    width: 45%;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-about p,
+  .footer-contact p,
+  .footer-social p {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}
 .site-footer {
   background: var(--bg-section);
   padding: 0.6rem 1rem;
@@ -1439,5 +1872,53 @@ p {
 
   .site-footer .dev-credit {
     font-size: 0.7rem;
+  }
+}
+
+
+
+.back-to-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; /* spacing between icon and text */
+  background: var(--primary);
+  color: var(--bg-section);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-speed) ease;
+  margin: 2rem 0; /* spacing above footer */
+}
+
+.back-to-home .back-icon {
+  font-size: 1.1rem;
+}
+
+.back-to-home:hover {
+  background: #d76850; 
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .back-to-home {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .back-to-home .back-icon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-home {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  .back-to-home .back-icon {
+    font-size: 0.9rem;
   }
 }
