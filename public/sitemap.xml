@@ -1,54 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Home Page -->
   <url>
     <loc>https://www.ganesh-engineers.com/</loc>
-    <lastmod>2025-09-09</lastmod>
-    <priority>1.00</priority>
+    <lastmod>2025-09-10</lastmod>
+    <priority>1.0</priority>
   </url>
 
   <!-- About Page -->
   <url>
-    <loc>https://www.ganesh-engineers.com/about</loc>
-    <lastmod>2025-09-09</lastmod>
-    <priority>0.80</priority>
+    <loc>https://www.ganesh-engineers.com/index.html#about</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Services Page -->
+  <!-- Services Pages -->
   <url>
-    <loc>https://www.ganesh-engineers.com/services</loc>
-    <lastmod>2025-09-09</lastmod>
-    <priority>0.85</priority>
+    <loc>https://www.ganesh-engineers.com/services/</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/services/powder-coating.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/services/sand-blasting.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/services/epoxy-painting.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/services/zinc-spray-metallizing.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/services/rubber-lining.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/services/sign-boards.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Projects Page -->
+  <!-- Projects Pages -->
   <url>
-    <loc>https://www.ganesh-engineers.com/projects</loc>
-    <lastmod>2025-09-09</lastmod>
-    <priority>0.85</priority>
+    <loc>https://www.ganesh-engineers.com/projects/</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/projects/chimney_project.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/projects/dairy_plant.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/projects/oil_tanks.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/projects/petrochemical_equipment.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/projects/steel_bridges.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/projects/power_plant_piping.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.7</priority>
   </url>
 
-  <!-- Clients Page -->
+  <!-- Blog Pages -->
   <url>
-    <loc>https://www.ganesh-engineers.com/clients</loc>
-    <lastmod>2025-09-09</lastmod>
-    <priority>0.70</priority>
+    <loc>https://www.ganesh-engineers.com/blog/</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/blog/powder-coating.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ganesh-engineers.com/blog/sand-blasting.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.7</priority>
   </url>
 
-  <!-- Testimonials Page -->
+  <!-- Legal Pages -->
   <url>
-    <loc>https://www.ganesh-engineers.com/testimonials</loc>
-    <lastmod>2025-09-09</lastmod>
-    <priority>0.70</priority>
+    <loc>https://www.ganesh-engineers.com/privacy-policy.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.5</priority>
   </url>
-
-  <!-- Contact Page -->
   <url>
-    <loc>https://www.ganesh-engineers.com/contact</loc>
-    <lastmod>2025-09-09</lastmod>
-    <priority>0.90</priority>
+    <loc>https://www.ganesh-engineers.com/terms-and-conditions.html</loc>
+    <lastmod>2025-09-10</lastmod>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
-
