@@ -143,7 +143,6 @@
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="services">All Services</a>
         <a href="#projects">Projects</a>
         <a href="#clients">Clients</a>
         <a href="#testimonials">Testimonials</a>
@@ -154,42 +153,38 @@
 
   <main>
     <!-- HERO SECTION -->
-<section id="home" class="hero-section" aria-label="Hero section introducing Ganesh Engineers with premium surface protection solutions">
-  
-  <!-- Background Glow / Decorative Layer -->
-  <div class="hero-glow" aria-hidden="true"></div>
+    <section id="home" class="hero-section"
+      aria-label="Hero section introducing Ganesh Engineers with premium surface protection solutions">
 
-  <!-- Hero Content Wrapper -->
-  <div class="hero-content">
-    
-    <!-- Main Title -->
-    <h1 class="hero-title" role="heading" aria-level="1">
-      Ganesh Engineers
-    </h1>
+      <!-- Background Glow / Decorative Layer -->
+      <div class="hero-glow" aria-hidden="true"></div>
 
-    <!-- Subtitle / Tagline -->
-    <h2 class="hero-subtitle" role="heading" aria-level="2">
-      Premium Surface Protection Solutions
-    </h2>
-    
-    <!-- Optional Hero Description / Highlight -->
-    <p class="hero-description">
-      Trusted by industry leaders for durable, eco-friendly, and high-performance coating solutions. 
-      Explore our services and discover how we protect your assets with precision.
-    </p>
+      <!-- Hero Content Wrapper -->
+      <div class="hero-content">
 
-    <!-- Primary Call-to-Action Button -->
-    <a href="#services" class="hero-btn" role="button">
-      Our Services
-    </a>
+        <!-- Main Title -->
+        <h1 class="hero-title" role="heading" aria-level="1">
+          Ganesh Engineers
+        </h1>
 
-    <!-- Secondary Ghost Button -->
-    <a href="#contact" class="hero-btn ghost" role="button" aria-label="Get a quote from Ganesh Engineers">
-      Get a Quote
-    </a>
+        <!-- Subtitle / Tagline -->
+        <h2 class="hero-subtitle" role="heading" aria-level="2">
+          Premium Surface Protection Solutions
+        </h2>
 
-  </div>
-</section>
+        <!-- Optional Hero Description / Highlight -->
+        <p class="hero-description">
+          Trusted by industry leaders for durable, eco-friendly, and high-performance coating solutions.
+          Explore our services and discover how we protect your assets with precision.
+        </p>
+
+        <!-- Primary Call-to-Action Button -->
+        <a href="#about" class="hero-btn" role="button">
+          Discover
+        </a>
+
+      </div>
+    </section>
 
 
     <!-- ABOUT -->
@@ -234,64 +229,69 @@
       <div class="container">
         <header class="section-header">
           <h2 id="services-header">Our Services</h2>
-          <p class="subtitle">Comprehensive surface protection services — view detailed pages for each service.</p>
+          <p class="subtitle">Comprehensive surface protection services — click on any card to view detailed pages for
+            each service.</p>
         </header>
+
         <div class="service-grid">
           <!-- Powder Coating -->
-          <article class="service-card" aria-labelledby="svc-powder-title">
-            <a href="services/powder-coating.html" aria-label="Powder Coating service page">
-              <img src="images/powder-coating.webp" alt="Powder coating applied to industrial parts" loading="lazy" />
-            </a>
-            <h3 id="svc-powder-title"><a href="services/powder-coating.html">Powder Coating</a></h3>
+          <a href="services/powder-coating.html" class="service-card" aria-labelledby="svc-powder-title">
+            <img src="images/powder-coating.webp" alt="Powder coating applied to industrial parts" loading="lazy" />
+            <h3 id="svc-powder-title">Powder Coating</h3>
             <p>Durable, eco-friendly finishes for structural and fabricated components. Ideal for corrosion resistance
               and aesthetics.</p>
-          </article>
+          </a>
+
           <!-- Sand Blasting -->
-          <article class="service-card" aria-labelledby="svc-sand-title">
-            <a href="services/sand-blasting.html" aria-label="Sand Blasting service page">
-              <img src="images/Sand-Blasting.webp" alt="Sand blasting preparing a steel surface" loading="lazy" />
-            </a>
-            <h3 id="svc-sand-title"><a href="services/sand-blasting.html">Sand Blasting</a></h3>
-            <p>Surface preparation for optimal coating adhesion — removes rust, scale and old coatings to produce a clean
-              profile.</p>
-          </article>
+          <a href="services/sand-blasting.html" class="service-card" aria-labelledby="svc-sand-title">
+            <img src="images/Sand-Blasting.webp" alt="Sand blasting preparing a steel surface" loading="lazy" />
+            <h3 id="svc-sand-title">Sand Blasting</h3>
+            <p>Surface preparation for optimal coating adhesion — removes rust, scale and old coatings to produce a
+              clean profile.</p>
+          </a>
+
           <!-- Epoxy Painting -->
-          <article class="service-card" aria-labelledby="svc-epoxy-title">
-            <a href="services/epoxy-painting.html" aria-label="Epoxy Painting service page">
-              <img src="images/epoxy.webp" alt="Epoxy painting for corrosion protection" loading="lazy" />
-            </a>
-            <h3 id="svc-epoxy-title"><a href="services/epoxy-painting.html">Epoxy Painting</a></h3>
+          <a href="services/epoxy-painting.html" class="service-card" aria-labelledby="svc-epoxy-title">
+            <img src="images/epoxy.webp" alt="Epoxy painting for corrosion protection" loading="lazy" />
+            <h3 id="svc-epoxy-title">Epoxy Painting</h3>
             <p>High-performance coatings for chemical and abrasion resistance used in heavy industry and flooring
               systems.</p>
-          </article>
+          </a>
+
           <!-- Zinc Spray & Metallizing -->
-          <article class="service-card" aria-labelledby="svc-zinc-title">
-            <a href="services/zinc-spray.html" aria-label="Zinc Spray and Metallizing service page">
-              <img src="images/zinc.webp" alt="Zinc spray metallizing on metal" loading="lazy" />
-            </a>
-            <h3 id="svc-zinc-title"><a href="services/zinc-spray.html">Zinc Spray & Metallizing</a></h3>
-            <p>Thermal spray solutions for sacrificial corrosion protection and long-term durability of steel structures.</p>
-          </article>
+          <a href="services/zinc-spray.html" class="service-card" aria-labelledby="svc-zinc-title">
+            <img src="images/zinc.webp" alt="Zinc spray metallizing on metal" loading="lazy" />
+            <h3 id="svc-zinc-title">Zinc Spray & Metallizing</h3>
+            <p>Thermal spray solutions for sacrificial corrosion protection and long-term durability of steel
+              structures.</p>
+          </a>
+
           <!-- Rubber Lining -->
-          <article class="service-card" aria-labelledby="svc-rubber-title">
-            <a href="services/rubber-lining.html" aria-label="Rubber Lining service page">
-              <img src="images/rubber.webp" alt="Rubber lining for chemical resistance" loading="lazy" />
-            </a>
-            <h3 id="svc-rubber-title"><a href="services/rubber-lining.html">Rubber Lining</a></h3>
-            <p>Chemical- and abrasion-resistant linings for tanks, pipes and process equipment to extend service life.</p>
-          </article>
+          <a href="services/rubber-lining.html" class="service-card" aria-labelledby="svc-rubber-title">
+            <img src="images/rubber.webp" alt="Rubber lining for chemical resistance" loading="lazy" />
+            <h3 id="svc-rubber-title">Rubber Lining</h3>
+            <p>Chemical- and abrasion-resistant linings for tanks, pipes and process equipment to extend service life.
+            </p>
+          </a>
+
           <!-- Sign Boards -->
-          <article class="service-card" aria-labelledby="svc-sign-title">
-            <a href="services/sign-boards.html" aria-label="Sign Boards service page">
-              <img src="images/Sign Boards.webp" alt="Durable industrial sign boards" loading="lazy" />
-            </a>
-            <h3 id="svc-sign-title"><a href="services/sign-boards.html">Sign Boards</a></h3>
-            <p>Robust sign solutions for industrial and commercial applications — customizable and weather-resistant.</p>
-          </article>
+          <a href="services/sign-boards.html" class="service-card" aria-labelledby="svc-sign-title">
+            <img src="images/Sign Boards.webp" alt="Durable industrial sign boards" loading="lazy" />
+            <h3 id="svc-sign-title">Sign Boards</h3>
+            <p>Robust sign solutions for industrial and commercial applications — customizable and weather-resistant.
+            </p>
+          </a>
         </div>
-        <p class="service-note">For full technical details, case studies and specification sheets visit the individual service pages linked above.</p>
+
+        <p class="service-note">
+          Discover full technical details, case studies, and project specifications by visiting the dedicated service
+          pages — your guide to choosing the right solution.
+        </p>
+
+        <a href="/public/services" class="hero-btn">Explore All Services</a>
       </div>
     </section>
+
 
     <!-- PROJECTS -->
     <section id="projects" class="animate-section" aria-labelledby="projects-header">
@@ -300,125 +300,140 @@
           <h2 id="projects-header">Our Projects</h2>
           <p class="subtitle">A showcase of our expertise in industrial surface protection across India.</p>
         </header>
-        <div class="projects-gallery">
-          <article class="project-card">
-            <img src="images/chimney_project.webp" alt="200 meter chimney tower protected with coating" loading="lazy"/>
-            <h3>200 MTS Chimney Tower</h3>
-            <p>Precision engineered tower protection handling extreme wind loads and chemical exposure.</p>
+
+        <div class="project-grid">
+          <!-- Chimney Project -->
+          <article class="project-card" aria-labelledby="proj-chimney-title">
+            <a href="projects/chimney_project.html" aria-label="200 MTS Chimney Tower Project">
+              <img src="images/chimney_project.webp" alt="200 meter chimney tower protected with coating"
+                loading="lazy" />
+              <h3 id="proj-chimney-title">200 MTS Chimney Tower</h3>
+              <p>Precision engineered tower protection handling extreme wind loads and chemical exposure.</p>
+            </a>
           </article>
-          <article class="project-card">
-            <img src="images/dairy_plant.webp" alt="Dairy plant equipment with galvanizing" loading="lazy"/>
-            <h3>Dairy Plant Galvanizing</h3>
-            <p>Hot-dip galvanizing and protective systems for hygiene-sensitive environments.</p>
+
+          <!-- Dairy Plant Project -->
+          <article class="project-card" aria-labelledby="proj-dairy-title">
+            <a href="projects/dairy_plant.html" aria-label="Dairy Plant Galvanizing Project">
+              <img src="images/dairy_plant.webp" alt="Dairy plant equipment with galvanizing" loading="lazy" />
+              <h3 id="proj-dairy-title">Dairy Plant Galvanizing</h3>
+              <p>Hot-dip galvanizing and protective systems for hygiene-sensitive environments.</p>
+            </a>
           </article>
-          <article class="project-card">
-            <img src="images/oil_tanks.webp" alt="Oil storage tanks with protective coatings" loading="lazy"/>
-            <h3>Oil Storage Tanks</h3>
-            <p>Coatings and metallizing systems for marine and coastal conditions to ensure long service life.</p>
+
+          <!-- Oil Tanks Project -->
+          <article class="project-card" aria-labelledby="proj-oil-title">
+            <a href="projects/oil_tanks.html" aria-label="Oil Storage Tanks Project">
+              <img src="images/oil_tanks.webp" alt="Oil storage tanks with protective coatings" loading="lazy" />
+              <h3 id="proj-oil-title">Oil Storage Tanks</h3>
+              <p>Coatings and metallizing systems for marine and coastal conditions to ensure long service life.</p>
+            </a>
           </article>
-          <article class="project-card">
-            <img src="images/petrochemical_equipment.webp" alt="Petrochemical equipment with chemical protective coating" loading="lazy"/>
-            <h3>Petrochemical Equipment</h3>
-            <p>Specialized coatings for severe chemical exposure and confined spaces.</p>
+
+          <!-- Petrochemical Equipment Project -->
+          <article class="project-card" aria-labelledby="proj-petro-title">
+            <a href="projects/petrochemical_equipment.html" aria-label="Petrochemical Equipment Project">
+              <img src="images/petrochemical_equipment.webp"
+                alt="Petrochemical equipment with chemical protective coating" loading="lazy" />
+              <h3 id="proj-petro-title">Petrochemical Equipment</h3>
+              <p>Specialized coatings for severe chemical exposure and confined spaces.</p>
+            </a>
           </article>
-          <article class="project-card">
-            <img src="images/steel_bridges.webp" alt="Steel bridge protected for coastal environment" loading="lazy"/>
-            <h3>Steel Bridges</h3>
-            <p>Certified coatings for high humidity and coastal exposure conditions.</p>
+
+          <!-- Steel Bridges Project -->
+          <article class="project-card" aria-labelledby="proj-bridge-title">
+            <a href="projects/steel_bridges.html" aria-label="Steel Bridges Project">
+              <img src="images/steel_bridges.webp" alt="Steel bridge protected for coastal environment"
+                loading="lazy" />
+              <h3 id="proj-bridge-title">Steel Bridges</h3>
+              <p>Certified coatings for high humidity and coastal exposure conditions.</p>
+            </a>
           </article>
-          <article class="project-card">
-            <img src="images/power_plant_piping.webp" alt="Power plant piping coated for high temperature service" loading="lazy"/>
-            <h3>Power Plant Piping</h3>
-            <p>High-temperature and abrasion-resistant coating systems for critical piping.</p>
+
+          <!-- Power Plant Piping Project -->
+          <article class="project-card" aria-labelledby="proj-power-title">
+            <a href="projects/power_plant_piping.html" aria-label="Power Plant Piping Project">
+              <img src="images/power_plant_piping.webp" alt="Power plant piping coated for high temperature service"
+                loading="lazy" />
+              <h3 id="proj-power-title">Power Plant Piping</h3>
+              <p>High-temperature and abrasion-resistant coating systems for critical piping.</p>
+            </a>
           </article>
-          <article class="project-card">
-            <img src="images/chemical_tank.webp" alt="Chemical storage tanks with epoxy coating" loading="lazy"/>
-            <h3>Chemical Storage Tanks</h3>
-            <p>Epoxy and rubber-lined tanks for chemical resistance and long-term durability.</p>
-          </article>
-          <article class="project-card">
-            <img src="images/water_treatment_plant.webp" alt="Water treatment plant equipment" loading="lazy"/>
-            <h3>Water Treatment Plant Equipment</h3>
-            <p>Complete corrosion protection and coating solutions for water treatment infrastructure.</p>
-          </article>
+
         </div>
+        <p class="project-note">
+          Explore full project details, case studies, and technical specifications by visiting each dedicated project
+          page — your guide to understanding our industrial surface protection expertise.
+        </p>
+
+        <a href="/projects" class="hero-btn">Explore All Projects</a>
+
       </div>
-      <style>
-        .projects-gallery {
-          display: flex;
-          overflow-x: auto;
-          gap: 1.5rem;
-          padding: 1rem 0;
-          scroll-behavior: smooth;
-        }
-        .projects-gallery::-webkit-scrollbar { height: 8px; }
-        .projects-gallery::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
-        .project-card { min-width: 300px; flex: 0 0 auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 1rem; text-align: center; transition: transform 0.3s; }
-        .project-card:hover { transform: scale(1.05); }
-        .project-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
-        .project-card h3 { margin: 0.5rem 0; font-size: 1.1rem; }
-        .project-card p { font-size: 0.95rem; color: #555; }
-      </style>
     </section>
 
+
     <!-- CLIENTS -->
-<section id="clients" class="section" aria-labelledby="clients-header">
-  <div class="container">
-    <header class="section-header">
-      <h2 id="clients-header">Our Clients</h2>
-      <p class="subtitle">Trusted by leading industrial and manufacturing companies in India</p>
-    </header>
-    <div class="clients-grid">
-      <div class="client-logo"><img src="images/adani_logo.webp" alt="ADANI GROUP" loading="lazy"></div>
-      <div class="client-logo"><img src="images/ongc_logo.webp" alt="ONGC" loading="lazy"></div>
-      <div class="client-logo"><img src="images/lt_logo.webp" alt="L&T" loading="lazy"></div>
-      <div class="client-logo"><img src="images/reliance_logo.webp" alt="RELIANCE INDUSTRIES" loading="lazy"></div>
-      <div class="client-logo"><img src="images/shubham_logo.webp" alt="SHUBHAM EXTRUSION" loading="lazy"></div>
-      <div class="client-logo"><img src="images/rajoo_logo.webp" alt="RAJOO" loading="lazy"></div>
-      <div class="client-logo"><img src="images/mamta_logo.webp" alt="MAMTA" loading="lazy"></div>
-      <div class="client-logo"><img src="images/windsor_logo.webp" alt="WINDSOR" loading="lazy"></div>
-    </div>
-  </div>
-</section>
+    <section id="clients" class="section" aria-labelledby="clients-header">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="clients-header">Our Clients</h2>
+          <p class="subtitle">Trusted by leading industrial and manufacturing companies in India</p>
+        </header>
+        <div class="clients-grid">
+          <div class="client-logo"><img src="images/adani_logo.webp" alt="ADANI GROUP" loading="lazy"></div>
+          <div class="client-logo"><img src="images/ongc_logo.webp" alt="ONGC" loading="lazy"></div>
+          <div class="client-logo"><img src="images/lt_logo.webp" alt="L&T" loading="lazy"></div>
+          <div class="client-logo"><img src="images/reliance_logo.webp" alt="RELIANCE INDUSTRIES" loading="lazy"></div>
+          <div class="client-logo"><img src="images/shubham_logo.webp" alt="SHUBHAM EXTRUSION" loading="lazy"></div>
+          <div class="client-logo"><img src="images/rajoo_logo.webp" alt="RAJOO" loading="lazy"></div>
+          <div class="client-logo"><img src="images/mamta_logo.webp" alt="MAMTA" loading="lazy"></div>
+          <div class="client-logo"><img src="images/windsor_logo.webp" alt="WINDSOR" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
 
     <!-- TESTIMONIALS SECTION -->
-<section id="testimonials" class="section testimonials-section" aria-labelledby="testimonials-header">
-  <div class="container">
-    <!-- Section Header -->
-    <header class="section-header">
-      <h2 id="testimonials-header" class="section-title">What Our Clients Say</h2>
-    </header>
+    <section id="testimonials" class="section testimonials-section" aria-labelledby="testimonials-header">
+      <div class="container">
+        <!-- Section Header -->
+        <header class="section-header">
+          <h2 id="testimonials-header" class="section-title">What Our Clients Say</h2>
+        </header>
 
-    <!-- Testimonials Grid -->
-    <div class="testimonials-grid">
-      
-      <!-- Testimonial Card 1 -->
-      <div class="testimonial-card">
-        <p>Ganesh Engineers provided exceptional service for our industrial project. Their team was professional, timely, and delivered quality results beyond expectations.</p>
-        <cite>– Ramesh Patel, CEO of ABC Industries</cite>
+        <!-- Testimonials Grid -->
+        <div class="testimonials-grid">
+
+          <!-- Testimonial Card 1 -->
+          <div class="testimonial-card">
+            <p>Ganesh Engineers provided exceptional service for our industrial project. Their team was professional,
+              timely, and delivered quality results beyond expectations.</p>
+            <cite>– Ramesh Patel, CEO of ABC Industries</cite>
+          </div>
+
+          <!-- Testimonial Card 2 -->
+          <div class="testimonial-card">
+            <p>We trusted Ganesh Engineers with our coating and surface protection requirements. The team ensured
+              durability and top-notch quality on all deliverables.</p>
+            <cite>– Meena Sharma, Operations Manager</cite>
+          </div>
+
+          <!-- Testimonial Card 3 -->
+          <div class="testimonial-card">
+            <p>Their expertise in powder coating and sandblasting is unmatched. Every project was completed on schedule
+              with outstanding attention to detail.</p>
+            <cite>– Amit Singh, Plant Manager</cite>
+          </div>
+
+          <!-- Testimonial Card 4 -->
+          <div class="testimonial-card">
+            <p>Professional, reliable, and highly skilled. Ganesh Engineers has been our go-to partner for all surface
+              protection services across India.</p>
+            <cite>– Priya Desai, Project Lead</cite>
+          </div>
+
+        </div>
       </div>
-
-      <!-- Testimonial Card 2 -->
-      <div class="testimonial-card">
-        <p>We trusted Ganesh Engineers with our coating and surface protection requirements. The team ensured durability and top-notch quality on all deliverables.</p>
-        <cite>– Meena Sharma, Operations Manager</cite>
-      </div>
-
-      <!-- Testimonial Card 3 -->
-      <div class="testimonial-card">
-        <p>Their expertise in powder coating and sandblasting is unmatched. Every project was completed on schedule with outstanding attention to detail.</p>
-        <cite>– Amit Singh, Plant Manager</cite>
-      </div>
-
-      <!-- Testimonial Card 4 -->
-      <div class="testimonial-card">
-        <p>Professional, reliable, and highly skilled. Ganesh Engineers has been our go-to partner for all surface protection services across India.</p>
-        <cite>– Priya Desai, Project Lead</cite>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- FAQ -->
@@ -446,28 +461,37 @@
     </section>
 
     <!-- BLOG / INSIGHTS -->
-    <section id="blog" class="section" aria-labelledby="blog-header">
-      <div class="container">
-        <header class="section-header">
-          <h2 id="blog-header">Insights & Blog</h2>
-          <p class="subtitle">Latest news, tips and case studies on industrial coatings and surface protection</p>
-        </header>
-        <div class="blog-cards">
-          <article class="blog-card">
-            <img src="images/blog1.webp" alt="Advantages of epoxy coatings" loading="lazy" />
-            <h3><a href="blog/epoxy-coatings.html">Advantages of Epoxy Coatings</a></h3>
-            <p>Learn why epoxy coatings are widely used for chemical and abrasion resistance in industrial environments.
-            </p>
-          </article>
-          <article class="blog-card">
-            <img src="images/blog2.webp" alt="Powder coating process" loading="lazy" />
-            <h3><a href="blog/powder-coating.html">Powder Coating Process Explained</a></h3>
-            <p>Step-by-step guide to powder coating, surface preparation, application and curing for industrial parts.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+<section id="blog" class="section" aria-labelledby="blog-header">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="blog-header">Insights & Blog</h2>
+      <p class="subtitle">Stay updated with the latest news, expert tips, and case studies on industrial coatings and surface protection.</p>
+    </header>
+
+    <div class="blog-cards">
+
+      <!-- Powder Coating Blog -->
+      <article class="blog-card">
+        <a href="blog/powder-coating.html">
+          <img src="images/powder-coating.webp" alt="Powder coating process" loading="lazy" />
+          <h3>Powder Coating Process Explained</h3>
+          <p>A complete step-by-step guide on powder coating, including surface preparation, application techniques, and curing for industrial parts.</p>
+        </a>
+      </article>
+
+      <!-- Sand Blasting Blog -->
+      <article class="blog-card">
+        <a href="blog/sand-blasting.html">
+          <img src="images/sand-blasting.webp" alt="Benefits of Sand Blasting" loading="lazy" />
+          <h3>Benefits of Sand Blasting</h3>
+          <p>Explore how sand blasting optimizes surface preparation, enhances coating adhesion, and prolongs the lifespan of industrial equipment.</p>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
     <section id="contact" class="animate-section">
       <h2>Contact Us</h2>
@@ -500,65 +524,67 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-  <div class="footer-grid">
-    
-    <!-- About Ganesh Engineers -->
-    <div class="footer-about">
-      <img src="images/logo.png" alt="Ganesh Engineers Logo" class="footer-logo" />
-      <p>
-        Ganesh Engineers is a trusted industrial surface protection company delivering Powder Coating, Sand Blasting, Epoxy, Zinc Spray, Metallizing, and Rubber Lining services across India since 1996. We ensure durability, quality, and customer satisfaction in every project.
+    <div class="footer-grid">
+
+      <!-- About Ganesh Engineers -->
+      <div class="footer-about">
+        <img src="images/logo.png" alt="Ganesh Engineers Logo" class="footer-logo" />
+        <p>
+          Ganesh Engineers is a trusted industrial surface protection company delivering Powder Coating, Sand Blasting,
+          Epoxy, Zinc Spray, Metallizing, and Rubber Lining services across India since 1996. We ensure durability,
+          quality, and customer satisfaction in every project.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📞 <a href="tel:+919825073281">+91-98250 73281</a></p>
+        <p>📞 <a href="tel:+918799595305">+91-87995 95305</a></p>
+        <p>✉️ <a href="mailto:ganesh.eng217@gmail.com">ganesh.eng217@gmail.com</a></p>
+        <p>🏢 Plot No. 4913, Phase-5, G.I.D.C., B/H. Indo German Tool Room, Vatva, Ahmedabad, Gujarat, 382445</p>
+        <p>⏰ Mon-Fri: 09:00 - 18:00 | Sat: 09:00 - 13:00</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <p>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a> |
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a> |
+          <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ganesh Engineers. All Rights Reserved.</p>
+      <p class="dev-credit">
+        site developed by
+        <a href="https://raj-portfolio-nuu4.onrender.com/" target="_blank" rel="noopener noreferrer"
+          style="color: inherit; text-decoration: none;">
+          Raj<span class="red-i">i</span>nfoworks
+        </a>
       </p>
     </div>
-
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Insights</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms & Conditions</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <p>📞 <a href="tel:+919825073281">+91-98250 73281</a></p>
-      <p>📞 <a href="tel:+918799595305">+91-87995 95305</a></p>
-      <p>✉️ <a href="mailto:ganesh.eng217@gmail.com">ganesh.eng217@gmail.com</a></p>
-      <p>🏢 Plot No. 4913, Phase-5, G.I.D.C., B/H. Indo German Tool Room, Vatva, Ahmedabad, Gujarat, 382445</p>
-      <p>⏰ Mon-Fri: 09:00 - 18:00 | Sat: 09:00 - 13:00</p>
-    </div>
-
-    <!-- Social Media -->
-    <div class="footer-social">
-      <h4>Follow Us</h4>
-      <p>
-        <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a> |
-        <a href="https://www.linkedin.com/company/ganesh-engineers" target="_blank" rel="noopener">LinkedIn</a> |
-        <a href="https://www.instagram.com/yourpage" target="_blank" rel="noopener">Instagram</a>
-      </p>
-    </div>
-
-  </div>
-
-  <!-- Footer Bottom -->
-  <div class="footer-bottom">
-    <p>&copy; 2025 Ganesh Engineers. All Rights Reserved.</p>
-    <p class="dev-credit">
-      site developed by
-      <a href="https://raj-portfolio-nuu4.onrender.com/" target="_blank" rel="noopener noreferrer"
-        style="color: inherit; text-decoration: none;">
-        Raj<span class="red-i">i</span>nfoworks
-      </a>
-    </p>
-  </div>
-</footer>
+  </footer>
 
   <script src="script.js" defer></script>
 </body>

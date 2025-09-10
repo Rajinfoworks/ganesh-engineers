@@ -7,8 +7,10 @@
   --bg-light: #f7f7f8;
   --bg-section: #fff;
   --bg-alt: #f0e9e4;
-  --primary: #e07a5f;       /* Coral / Orange */
-  --secondary: #3d405b;     /* Dark muted blue */
+  --primary: #e07a5f;
+  /* Coral / Orange */
+  --secondary: #3d405b;
+  /* Dark muted blue */
   --text: #2c2c2c;
   --text-light: #555;
   --shadow-light: rgba(0, 0, 0, 0.05);
@@ -77,8 +79,17 @@ body {
 }
 
 /* Mobile Logo Sizes */
-@media (max-width: 768px) { .brand-logo { max-width: 120px; } }
-@media (max-width: 480px) { .brand-logo { max-width: 100px; } }
+@media (max-width: 768px) {
+  .brand-logo {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo {
+    max-width: 100px;
+  }
+}
 
 /* Navigation Links */
 .nav-links {
@@ -140,9 +151,11 @@ body {
 .nav-toggle.open .nav-toggle-bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 .nav-toggle.open .nav-toggle-bar:nth-child(2) {
   opacity: 0;
 }
+
 .nav-toggle.open .nav-toggle-bar:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
@@ -171,7 +184,9 @@ body {
     transform: translateX(0);
   }
 
-  .nav-toggle { display: block; }
+  .nav-toggle {
+    display: block;
+  }
 
   .nav-links a {
     font-size: 1.2rem;
@@ -192,10 +207,12 @@ body {
 
 /* ==== Section Styling ==== */
 .section {
-  position: relative;          /* for decorative elements */
+  position: relative;
+  /* for decorative elements */
   padding: 5rem 2rem;
   background: var(--bg-section);
-  overflow: hidden;            /* ensures decorative bubbles stay contained */
+  overflow: hidden;
+  /* ensures decorative bubbles stay contained */
   transition: background var(--transition-speed);
 }
 
@@ -383,7 +400,8 @@ p {
 ============================================================================= */
 .hero-section {
   background: linear-gradient(to bottom, #f5f7fa, #e0e5ec);
-  padding: 12rem 2rem 14rem; /* base desktop padding */
+  padding: 12rem 2rem 14rem;
+  /* base desktop padding */
   text-align: center;
   color: #222;
   display: flex;
@@ -392,7 +410,8 @@ p {
   align-items: center;
   position: relative;
   overflow: hidden;
-  min-height: 100vh; /* ensures full viewport height */
+  min-height: 100vh;
+  /* ensures full viewport height */
   box-sizing: border-box;
 }
 
@@ -757,6 +776,37 @@ p {
   top: 0;
 }
 
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card h3 {
+  margin: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  margin: 0 1rem 1rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
 /* ============================== 
    Mobile Responsiveness
 ============================================================================= */
@@ -804,14 +854,12 @@ p {
 
 
 /* ========================================================================== 
-   Projects Section — Clean & Responsive
+   Projects Section — Services Card Style
 ============================================================================= */
 #projects {
-  position: relative;
   padding: 4rem 2rem;
   text-align: center;
   background: var(--bg-alt);
-  box-sizing: border-box;
 }
 
 #projects .section-title {
@@ -835,9 +883,8 @@ p {
 /* Grid Layout for Desktop */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  align-items: stretch;
 }
 
 /* Individual Project Card */
@@ -846,10 +893,10 @@ p {
   border-radius: 12px;
   padding: 2rem 1.5rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -857,21 +904,25 @@ p {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Project Card Image */
+.project-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .project-card img {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 1rem;
-  border-radius: 20px;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
   transition: transform 0.3s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* Project Card Text */
 .project-card h3 {
   font-size: 1.25rem;
   margin-bottom: 0.6rem;
@@ -885,25 +936,8 @@ p {
   color: var(--text-light);
 }
 
-/* Gradient overlay on hover */
-.project-card::before {
-  content: "";
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, rgba(224, 122, 95, 0.15), transparent);
-  transition: top 0.4s ease;
-  z-index: 0;
-}
-
-.project-card:hover::before {
-  top: 0;
-}
-
 /* ============================== 
-   Mobile Responsiveness
+   Mobile Responsiveness — Projects Section
 ============================================================================= */
 @media (max-width: 768px) {
   #projects {
@@ -914,12 +948,13 @@ p {
     font-size: 1.5rem;
   }
 
-  /* Horizontal scroll for project cards on small screens */
+  /* Horizontal scroll for project cards */
   .project-grid {
     display: flex;
     gap: 1rem;
     overflow-x: auto;
     padding-bottom: 1rem;
+    scroll-behavior: smooth;
   }
 
   .project-card {
@@ -942,27 +977,41 @@ p {
     font-size: 0.85rem;
     line-height: 1.4;
   }
+
+  /* Optional: Hide scrollbar for clean look */
+  .project-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .project-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .project-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .project-card {
-    flex: 0 0 calc(90% - 1rem);
-  }
-
   .project-card h3 {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .project-card p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
-
-
-
 /* ========================================================================== 
-   Clients Section — Clean & Responsive
+   Clients Section — Modern & Professional
 ============================================================================= */
 #clients {
   position: relative;
@@ -996,18 +1045,19 @@ p {
   gap: 2rem;
   justify-items: center;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 /* Individual Client Card */
 .client-logo {
   background: var(--bg-section);
   border-radius: 16px;
-  padding: 0.8rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .client-logo::before {
@@ -1017,9 +1067,10 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, rgba(224, 122, 95, 0.12), transparent);
+  background: linear-gradient(135deg, rgba(224, 122, 95, 0.12), transparent 70%);
   transition: top 0.4s ease;
   border-radius: 16px;
+  z-index: 0;
 }
 
 .client-logo:hover::before {
@@ -1031,17 +1082,19 @@ p {
   height: 100px;
   border-radius: 20px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
   display: block;
+  position: relative;
+  z-index: 1;
 }
 
 .client-logo:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .client-logo:hover img {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 /* ============================== 
@@ -1056,7 +1109,7 @@ p {
   .client-logo {
     width: 80px;
     height: 80px;
-    padding: 0.5rem;
+    padding: 0.6rem;
   }
 
   .client-logo img {
@@ -1068,7 +1121,30 @@ p {
     transform: translateY(-4px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   }
+
+  .client-logo:hover img {
+    transform: scale(1.08);
+  }
 }
+
+@media (max-width: 480px) {
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .client-logo {
+    width: 70px;
+    height: 70px;
+    padding: 0.5rem;
+  }
+
+  .client-logo img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 
 
 /* ========================================================================== 
@@ -1076,14 +1152,16 @@ p {
 ============================================================================= */
 #testimonials {
   position: relative;
-  padding: clamp(3rem, 5vw, 6rem); /* Fluid padding */
+  padding: clamp(3rem, 5vw, 6rem);
+  /* Fluid padding */
   background: var(--bg-section);
   text-align: center;
   box-sizing: border-box;
 }
 
 #testimonials .section-title {
-  font-size: clamp(1.8rem, 2.5vw, 2.8rem); /* Fluid font size */
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  /* Fluid font size */
   font-weight: 700;
   color: var(--secondary);
   margin-bottom: 2.5rem;
@@ -1127,7 +1205,8 @@ p {
 .testimonial-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-  background: rgba(224, 122, 95, 0.03); /* subtle hover highlight */
+  background: rgba(224, 122, 95, 0.03);
+  /* subtle hover highlight */
 }
 
 .testimonial-card p {
@@ -1166,7 +1245,7 @@ p {
 }
 
 /* Ensure content is above overlay */
-.testimonial-card > * {
+.testimonial-card>* {
   position: relative;
   z-index: 1;
 }
@@ -1196,7 +1275,8 @@ p {
   }
 
   .testimonials-grid {
-    grid-template-columns: 1fr; /* Single column on small screens */
+    grid-template-columns: 1fr;
+    /* Single column on small screens */
     gap: clamp(1rem, 3vw, 1.5rem);
   }
 
@@ -1413,7 +1493,7 @@ p {
   background: var(--bg-section);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   display: flex;
@@ -1422,7 +1502,7 @@ p {
 
 .blog-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 /* Blog Card Image */
@@ -1589,13 +1669,13 @@ p {
   color: #fff;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
 }
 
 .contact-form button:hover {
   background-color: #d76850;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 /* ------------------------------
@@ -1617,7 +1697,8 @@ p {
 
 .input-wrapper input,
 .input-wrapper textarea {
-  padding-left: 2.8rem; /* space for icon */
+  padding-left: 2.8rem;
+  /* space for icon */
   padding-right: 1rem;
   padding-top: 0.85rem;
   padding-bottom: 0.85rem;
@@ -1683,6 +1764,148 @@ p {
   }
 }
 
+/* ==============================
+   Legal Pages CSS (Privacy Policy & Terms)
+============================== */
+
+/* Main Section Styling */
+.legal-section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--bg-alt);
+  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  box-sizing: border-box;
+}
+
+.legal-section .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.legal-section .section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.8rem auto 0;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Headings */
+.legal-section h2,
+.legal-section h3 {
+  font-weight: 600;
+  color: var(--secondary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.legal-section h2 {
+  font-size: 1.8rem;
+}
+
+.legal-section h3 {
+  font-size: 1.4rem;
+}
+
+/* Paragraphs & Lists */
+.legal-section p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.legal-section ul,
+.legal-section ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.legal-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+.legal-section a {
+  color: var(--primary);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.legal-section a:hover {
+  color: var(--secondary);
+}
+
+/* Optional Call-to-Action Button */
+.legal-section .hero-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.legal-section .hero-btn:hover {
+  background: var(--secondary);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .legal-section {
+    padding: 2rem 1rem;
+  }
+
+  .legal-section .section-title {
+    font-size: 1.6rem;
+  }
+
+  .legal-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .legal-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .legal-section p,
+  .legal-section ul,
+  .legal-section ol {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-section .section-title {
+    font-size: 1.4rem;
+  }
+
+  .legal-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .legal-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .legal-section p,
+  .legal-section ul,
+  .legal-section ol {
+    font-size: 0.9rem;
+  }
+}
+
 
 /* =========================
    Footer Styles — Fully Responsive
@@ -1701,12 +1924,14 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   width: 95%;
-  max-width: 1400px; /* scalable for large screens */
+  max-width: 1400px;
+  /* scalable for large screens */
   margin: 0 auto 2rem;
 }
 
 .footer-logo {
-  max-width: 180px; /* slightly larger for big screens */
+  max-width: 180px;
+  /* slightly larger for big screens */
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
@@ -1831,6 +2056,7 @@ p {
     font-size: 0.75rem;
   }
 }
+
 .site-footer {
   background: var(--bg-section);
   padding: 0.6rem 1rem;
@@ -1875,12 +2101,15 @@ p {
   }
 }
 
-
+/* =========================
+   Extra added code
+========================= */
 
 .back-to-home {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem; /* spacing between icon and text */
+  gap: 0.5rem;
+  /* spacing between icon and text */
   background: var(--primary);
   color: var(--bg-section);
   padding: 0.75rem 1.5rem;
@@ -1889,7 +2118,8 @@ p {
   text-decoration: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: all var(--transition-speed) ease;
-  margin: 2rem 0; /* spacing above footer */
+  margin: 2rem 0;
+  /* spacing above footer */
 }
 
 .back-to-home .back-icon {
@@ -1897,7 +2127,7 @@ p {
 }
 
 .back-to-home:hover {
-  background: #d76850; 
+  background: #d76850;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
@@ -1908,6 +2138,7 @@ p {
     padding: 0.65rem 1.2rem;
     font-size: 0.9rem;
   }
+
   .back-to-home .back-icon {
     font-size: 1rem;
   }
@@ -1918,7 +2149,13 @@ p {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
   }
+
   .back-to-home .back-icon {
     font-size: 0.9rem;
   }
 }
+
+
+
+
+

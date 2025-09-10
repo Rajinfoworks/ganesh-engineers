@@ -201,4 +201,4 @@ function showToast(message, type = "info") {
 /* =========================
    Disable right-click on entire page
 ========================= */
-document.addEventListener('contextmenu', event => event.preventDefault());
+
