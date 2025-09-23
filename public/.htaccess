@@ -1,4 +1,39 @@
-# 301 Redirect non-www to www
+# =========================
+# Ganesh Engineers - SEO & Redirects
+# =========================
+
+# 1️⃣ 301 Redirect non-www to www
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^ganesh-engineers\.com [NC]
 RewriteRule ^(.*)$ https://www.ganesh-engineers.com/$1 [L,R=301]
+
+# 2️⃣ Force HTTPS (if not already done)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 3️⃣ Basic Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# 4️⃣ Default Directory Index
+DirectoryIndex index.html index.php
+
+# 5️⃣ Disable directory listing
+Options -Indexes
+
+# 6️⃣ Compression & Caching (Optional)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hours"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# End of File
