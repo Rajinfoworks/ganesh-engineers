@@ -1,0 +1,4 @@
+# 301 Redirect non-www to www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^ganesh-engineers\.com [NC]
+RewriteRule ^(.*)$ https://www.ganesh-engineers.com/$1 [L,R=301]
