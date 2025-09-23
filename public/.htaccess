@@ -1,0 +1,27 @@
+# =========================
+# Ganesh Engineers - Force HTTPS & WWW
+# =========================
+
+RewriteEngine On
+
+# Redirect all non-www and http requests to https://www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.ganesh-engineers.com/$1 [L,R=301]
+
+# -------------------------
+# Optional: Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# Default Directory Index
+DirectoryIndex index.html index.php
+
+# Disable directory listing
+Options -Indexes
+
+# End of File
