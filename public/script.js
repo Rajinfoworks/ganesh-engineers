@@ -203,22 +203,47 @@ function showToast(message, type = "info") {
 ========================= */
 
 // Disable right-click
-document.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-    alert("Right-click is disabled on this website.");
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  alert("Right-click is disabled on this website.");
 });
 
 // Disable common keyboard shortcuts
-document.addEventListener("keydown", function(e) {
-    // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-    if (
-        e.key === "F12" || // F12
-        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || // Ctrl+Shift+I/J
-        (e.ctrlKey && e.key === "U") // Ctrl+U
-    ) {
-        e.preventDefault();
-        alert("This action is disabled on this website.");
+document.addEventListener("keydown", function (e) {
+  // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+  if (
+    e.key === "F12" || // F12
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || // Ctrl+Shift+I/J
+    (e.ctrlKey && e.key === "U") // Ctrl+U
+  ) {
+    e.preventDefault();
+    alert("This action is disabled on this website.");
+  }
+});
+
+/* ========================================================================== 
+   Back-to-Top Button – Modern & Universal
+============================================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  if (!scrollTopBtn) return; // Exit if button not found
+
+  // Show/Hide on scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.style.display = "flex"; // use flex for better centering (icon/text)
+    } else {
+      scrollTopBtn.style.display = "none";
     }
+  });
+
+  // Smooth scroll to top
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 });
 
 
